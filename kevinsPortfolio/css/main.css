@@ -1,0 +1,39 @@
+/*body{
+    background-image: url(../img/morningStars.gif);
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+   
+}
+*/
+body { 
+    background: url(../img/colorfulMe.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+#transparentBg{
+    background: rgba(14, 19, 16, 0.479);
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+.row{
+    margin: 0;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+strong{
+    color: orange;
+}
+
+.socialIcons{
+    width: 50px;
+}
