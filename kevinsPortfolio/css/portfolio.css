@@ -23,7 +23,7 @@
     font-size: 20px;;
 }
 body { 
-    background: #EEEEEE; 
+    background: #ccc6c6; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -32,6 +32,8 @@ body {
 
   .row{
       margin-right: 0;
+      border-radius: 15px;
+      background-color: #FFFFFF;
   }
   .card{
      margin-bottom: 20px;
