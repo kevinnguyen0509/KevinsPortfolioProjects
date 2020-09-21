@@ -1,3 +1,14 @@
+.jumbotron{
+    background-image: url(../img/laptop1.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}
+
+
+
 /*body{
     background-image: url(../img/morningStars.gif);
     overflow: hidden;
@@ -12,15 +23,22 @@
     font-size: 20px;;
 }
 body { 
-    background: url(../img/colorfulMe.jpg) no-repeat center center fixed; 
+    background: #EEEEEE; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
   }
+  .card-deck{
+      
+      border-radius: 15px;
+  }
+  .card, .card-img-top{
+      border-radius: 15px;
+  }
 
-  button ,.jumbotron{
-    box-shadow: 10px 5px 5px black;
+  button ,.jumbotron, .card{
+    box-shadow: 5px 5px 5px black;
   }
 #transparentBg{
     background: rgba(14, 19, 16, 0.479);
@@ -29,14 +47,7 @@ body {
     width: 100%;
 }
 
-.row{
-    margin: 0;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-}
+
 
 strong{
     color: orange;
@@ -44,4 +55,8 @@ strong{
 
 .socialIcons{
     width: 50px;
+}
+
+.nav-link, small{
+    color: black;
 }
