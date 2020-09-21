@@ -30,11 +30,7 @@ body {
     background-size: cover;
   }
 
-  .row{
-      margin-right: 0;
-      border-radius: 15px;
-      background-color: #FFFFFF;
-  }
+ 
   .card{
      margin-bottom: 20px;
      margin-right: 10px;
@@ -57,7 +53,7 @@ body {
 
 
 strong{
-    color: orange;
+    color: rgb(255, 123, 0);
 }
 
 .socialIcons{
