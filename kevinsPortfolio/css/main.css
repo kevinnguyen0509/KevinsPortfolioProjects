@@ -7,12 +7,19 @@
    
 }
 */
+.navbar-custom{
+    box-shadow: 5px 10px 20px rgba(36, 35, 35, 0.884);
+}
 body { 
     background: url(../img/colorfulMe.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+  }
+
+  button{
+    box-shadow: 10px 5px 5px black;
   }
 #transparentBg{
     background: rgba(14, 19, 16, 0.479);
