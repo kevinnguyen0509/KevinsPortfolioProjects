@@ -1,23 +1,7 @@
-/*body{
-    background-image: url(../img/morningStars.gif);
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-   
-}
-*/
 .navbar-custom{
     box-shadow: 5px 10px 20px rgba(36, 35, 35, 0.884);
     font-size: 20px;;
 }
-body { 
-    background: url(../img/colorfulMe.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
 
   button{
     box-shadow: 10px 5px 5px black;
