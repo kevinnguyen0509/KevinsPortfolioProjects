@@ -30,7 +30,11 @@ body {
     background-size: cover;
   }
 
- 
+  #row{
+      margin-right: 0;
+      border-radius: 15px;
+      background-color: #FFFFFF;
+  }
   .card{
      margin-bottom: 20px;
      margin-right: 10px;
@@ -40,7 +44,7 @@ body {
       border-radius: 15px;
   }
 
-  button ,.jumbotron, .card{
+  button ,.jumbotron, .card, #row{
     box-shadow: 5px 5px 5px black;
   }
 #transparentBg{
@@ -52,8 +56,8 @@ body {
 
 
 
-strong{
-    color: rgb(255, 123, 0);
+strong, h5{
+    color: orange;
 }
 
 .socialIcons{
