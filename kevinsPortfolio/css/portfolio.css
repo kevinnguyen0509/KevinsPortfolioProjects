@@ -29,10 +29,15 @@ body {
     -o-background-size: cover;
     background-size: cover;
   }
-  .card-deck{
-      
-      border-radius: 15px;
+
+  .row{
+      margin-right: 0;
   }
+  .card{
+     margin-bottom: 20px;
+     margin-right: 10px;
+  }
+
   .card, .card-img-top{
       border-radius: 15px;
   }
