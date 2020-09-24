@@ -17,8 +17,8 @@ body {
 }
 
 .container{
-    width: 70%;
-    margin: auto;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 h1{
@@ -48,3 +48,15 @@ a {
 
 /* ---- Page Elements ---- */
 
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media(min-width: 769px){
+    .container{
+        width: 70%;
+        max-width: 1000px;
+        margin: auto;
+    }
+}
