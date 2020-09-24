@@ -41,6 +41,18 @@ a:visited{
     margin-bottom: 6px;
     
 }
+
+.main-nav:hover{
+    color: #093a58;
+}
+
+.name a,
+.main-nav a{
+    padding: 10px 15px;
+    display: block;
+}
+
+
 .container{
   padding-left: 1em;
   padding-right: 1em;
@@ -63,6 +75,7 @@ a {
 /* ---- Layout Containers ---- */
 
 .main-header {
+    text-align: center;
 	padding-top: 1.5em;
 	padding-bottom: 1.5em;
 	background: #3acec2;
@@ -88,9 +101,8 @@ a {
 @media(min-width: 769px){
 
     .name,
-    .main-nav li,
-    .main-nav{
-        display: inline;
+    .main-nav li{
+        display: inline-block;
         
     }
     .container{
@@ -99,4 +111,21 @@ a {
         margin: auto;
     }
 
+    .name{
+        width: 240px;
+        
+    }
+
+    .feat-img {
+        width: 300px;
+        float: left;
+        margin-top: 5px;
+        margin-right: 25px;
+        margin-bottom: 25px;
+        padding: 10px;
+        border: 1px solid #d9e4ea;
+
+    }
+    
+   
 }
