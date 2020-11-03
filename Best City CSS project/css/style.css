@@ -44,11 +44,15 @@ img {
 
 .name {
 	font-size: 1.25em;
+	
 }
 
 .name a,
-.main-nav a {
+.main-nav a,
+.name,
+.main-nav li {
 	text-align: center;
+	padding: 5px;
 }
 
 .main-nav a {
@@ -66,7 +70,20 @@ img {
 .banner {
 	color: #fff;
 	background: #3acec2;
+	text-align: center;
+	margin-bottom: 50px;
+	margin-top: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
+
+.secondary,
+.primary,
+.tertiary{
+ padding-left: 20px;
+ padding-right: 20px;
+}
+
 
 .main-footer {
 	background: #d9e4ea;
@@ -80,13 +97,47 @@ img {
 	width: 190px;
 }
 
+.main-footer{
+	text-align: center;
+}
+
 /* ================================= 
   Media Queries
 ==================================== */
 
+
+
 @media (min-width: 769px) {
 
+	.name,
+	.main-nav,
+	.main-nav li{
+		display: inline;
+		
+	}
 
+	.main-nav{
+		float: right;
+	}
+
+	.col{
+		float: left;
+		width: 30%;
+		
+		
+	}
+	.primary{
+		float: left;
+		width: 40%;
+	}
+
+
+	.container{
+        width: 80%;
+        max-width: 1000px;
+        margin: auto;
+    }
+	
 
 	/* ---- Float clearfix ---- */
 
@@ -96,4 +147,7 @@ img {
 		clear: both;
 	}
 
+
+
 }
+
