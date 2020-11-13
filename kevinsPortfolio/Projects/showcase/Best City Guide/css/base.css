@@ -117,7 +117,8 @@ img {
 
 @media (min-width: 769px) {
 	.main-header,
-	.row {
+	.row,
+	.masterrow {
 		width: 90%;
 		margin: 0 auto;
 	}
@@ -127,7 +128,8 @@ img {
 }
 @media (min-width: 1025px) {
 	.main-header,
-	.row {
+	.row,
+	.masterrow {
 		width: 80%;
 		max-width: 1150px;
 	}

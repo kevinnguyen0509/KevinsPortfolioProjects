@@ -1,12 +1,35 @@
 /* ================================= 
   Media Queries
 ==================================== */
+.secondary{
+    display: flex;
+    
+}
 
+.main-header{
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.col{
+    flex-grow: 1;       
+}
+.secondary{
+    flex-wrap: wrap;
+}
+
+.side-img{
+    flex-grow: 1;
+    width: 48%;
+}
 @media (min-width: 769px)
 {
     .main-header,
     .main-nav,
-    .row{
+    .masterrow,
+    .row2,
+    .secondary{
         display: flex;
         
     }
@@ -18,16 +41,18 @@
 
 
     .col{
-        flex-grow: 1;
-        flex-basis: 48%;
+        flex-grow: 1;       
     }
-
-    .row{
+    .secondary{
         flex-wrap: wrap;
     }
 
-    .primary{
-        flex-grow: 2;
-      }
+    .side-img{
+        flex-grow: 1;
+        width: 48%;
+    }
+
+
+      
 
 }
