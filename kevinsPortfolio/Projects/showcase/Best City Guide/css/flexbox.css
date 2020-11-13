@@ -6,7 +6,7 @@
 
   .main-header,
   .main-nav,
-  .row,{
+  .row{
     display: flex;
   }
 
