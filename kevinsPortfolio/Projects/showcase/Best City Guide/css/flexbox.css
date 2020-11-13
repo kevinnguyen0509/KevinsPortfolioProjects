@@ -5,7 +5,8 @@
 @media (min-width: 769px) {
 
   .main-header,
-  .main-nav{
+  .main-nav,
+  .row{
     display: flex;
   }
 
@@ -14,7 +15,15 @@
     align-items: center;
   }
 
-
+ 
+  .col{
+    flex-grow: 1;
+    flex-basis: 50%;
+    
+  }
+  .row{
+    flex-wrap: wrap;
+  }
 
 }
 
@@ -25,5 +34,17 @@
     justify-content: space-between;
     
   }
+  .col{
+    flex-basis: 0;
+  }
+
+  .primary{
+    flex-grow: 1.4;
+  }
+
+  .secondary{
+    order: -1;
+  }
+
 
 }
