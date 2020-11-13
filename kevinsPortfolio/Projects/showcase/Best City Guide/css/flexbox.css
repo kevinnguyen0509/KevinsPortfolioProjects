@@ -17,13 +17,18 @@
 
  
   .col{
-    flex-grow: 1;
-    flex-basis: 50%;
-    
+    flex-grow: 1; 
+    flex-basis: 48%; 
   }
+  
   .row{
     flex-wrap: wrap;
   }
+
+  .primary{
+    flex-grow: 2;
+  }
+
 
 }
 
@@ -34,8 +39,13 @@
     justify-content: space-between;
     
   }
+
   .col{
-    flex-basis: 0;
+    flex-grow: 1; 
+    flex-basis: 0; 
+  }
+  .row{
+    flex-wrap: wrap;
   }
 
   .primary{
