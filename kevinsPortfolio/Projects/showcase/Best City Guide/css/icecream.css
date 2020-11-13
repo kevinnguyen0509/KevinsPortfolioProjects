@@ -12,9 +12,6 @@
 }
 
 
-.col{
-    flex-grow: 1;       
-}
 .secondary{
     flex-wrap: wrap;
 }
@@ -39,10 +36,6 @@
         align-items: center;
     }
 
-
-    .col{
-        flex-grow: 1;       
-    }
     .secondary{
         flex-wrap: wrap;
     }
