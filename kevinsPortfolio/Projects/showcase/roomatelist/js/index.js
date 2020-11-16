@@ -18,7 +18,8 @@ function addItem(){
         }
         else{
             let newRow = table.insertRow(2);
-            newRow.innerHTML = `<tr> <td>${addinputText.value}</td> <td class='tdRightSide'><img src='img/emptyCircle.png' /></td> </tr>`;
+            newRow.innerHTML = `<tr> <td>${addinputText.value}</td> <td class='tdRightSide'><img src='img/emptyCircle.png' /></td>  <td class="tdRightSide"><img src="img/remove.png" /></td></tr>`;
+            addinputText.value ='';
         }
 
     });
