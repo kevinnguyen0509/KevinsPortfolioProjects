@@ -5,38 +5,54 @@
   }
 
   .row,
-  .container{
+  footer
+  {
       display: flex;
-      flex-direction: row;
      
-
   }
 
-  .row{
-      flex-wrap: wrap;
-      width: 100%;
-  }
+
 
   .col{
       flex-grow: 1;
+      flex-basis: 200px;
      
+     
+  }
+
+
+  .col2{
+    flex-grow: 1;
+    
+   
+   
+}
+
+  .secondary{
+      flex-grow: .1;
   }
   
   body {
     font-family: 'Nunito', sans-serif;
     color: #384047;
     background-color: white;
+    margin: 0;
     
   }
 
   .container{
       width: 90%;
-      margin:auto
+      margin:auto;
   }
   
   table {
     width: 100%;
-    margin: 20px auto;
+    margin: auto;
+    margin-bottom: 10%;
+    box-shadow: 10px 10px 100px grey;
+    border-radius: 15px 15px 0px 0px;
+    table-layout: fixed;
+    
   }
   
   caption {
@@ -45,27 +61,41 @@
     padding: 10px 0;
   }
   
-  thead, th {
+  thead, th{
     font-weight: 1000;
-    background:#27867F;
+    background:#2E2C87;
     color: #FFF;
-    border-radius: 15px 15px 0 0;
+   
   }
   
+  h1{
+      color:#2E2C87;
+  }
   tr {
     background: #f4f7f8;
     border-bottom: 1px solid #FFF;
     margin-bottom: 5px;
+    border-radius: 0px 0px 15px 15px;
   }
   
   tr:nth-child(even) {
-    background: #e8eeef;
+    background: #EDEDFF;
   }
   
   th, td {
     text-align: left;
     padding: 20px;
+    word-wrap:break-word;
+   
+  }
+
+  th{
+    border-radius: 15px 15px 0px 0px;
     
+  }
+
+  .tdRightSide{
+      text-align: center;
   }
   
   tfoot tr {
@@ -74,7 +104,7 @@
   
   tfoot td {
     padding: 10px 2px;
-    font-size: 0.8em;
+    
     font-style: italic;
     color: #8a97a0;
   }
@@ -84,15 +114,13 @@
       box-shadow: 10px 10px 100px grey;
       border:none;
       outline: none;
-      border-radius: 5px;
-      margin-top: 20px;
-      
-     
-      
+      margin-top: 20px; 
   }
 
   .textInput{
       width: 100%;
+      border-radius: 5px 0px 0px 05px;
+      margin-bottom: 50px;
   }
 
   h1,
@@ -101,15 +129,43 @@
   th,
   button
   {
-    font-size: 20px;  
+    font-size: 40px;  
   }
 
   .button{
-    background:#27867F;
+    background:#2E2C87;
     color: white;
     padding: 20px;
     box-shadow: 0px 0px 100px grey;
     width: 100%;
+    border-radius: 0 5px 5px 0;
+  }
+
+  img{
+      width: 100px;
+      height: auto;
+  }
+
+  .complete{
+      text-decoration:line-through;
+  }
+
+  footer{
+      
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 10px -10px 50px grey;
+      height: 10%;
+      background-color: black;
+      justify-content: space-evenly;
+      border-radius: 5px 5px 0 0;
+      
+  }
+
+  .vl {
+    border-left: 2px solid white;
+    height: 500px;
   }
 
 
@@ -120,7 +176,5 @@
 
 @media(min-width: 769px)
 {
-    body{
-       
-    }
+
 }
