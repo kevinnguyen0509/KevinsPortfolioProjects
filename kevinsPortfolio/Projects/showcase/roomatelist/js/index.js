@@ -24,3 +24,21 @@ function addItem(){
     });
 }
 
+
+function addItemEnterButton(){
+    addinputText.addEventListener('keydown', event =>{
+
+        if(addinputText.value.trim() == '' || addinputText.value == null){
+            //do nothing
+        }
+        else{
+            if(event.key == "Enter"){
+                let newRow = table.insertRow(2);
+                newRow.innerHTML = `<tr> <td>${addinputText.value}</td> <td class='tdRightSide'><img src='img/emptyCircle.png' /></td> </tr>  <td class="tdRightSide"><img src="img/remove.png" /></td>`;
+                addinputText.value ='';
+            }            
+        }
+
+    });
+}
+

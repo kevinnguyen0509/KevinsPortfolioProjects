@@ -10,7 +10,7 @@
         <div class="container">
             <div class="row">
                 <div class="primary col">
-                    <input type="text" id="addItem" class="textInput" name="input" placeholder="+ Add more todo items.." />
+                    <input type="text" id="addItem" class="textInput" name="input" placeholder="+ Add more todo items.."  onkeydown="addItemEnterButton()" />
                 </div>
                 <div class="secondary col">
                     <button type="button" class="button" id="addButton">+</button>       
@@ -18,21 +18,25 @@
 
             </div>
 
-            <h1>Grocery List</h1>
+            <h1>Chores List</h1>
 
             <table id="toDoTable">
                 <tr>
                   <th>ToDo:</th>
                   <th>Mark Done?</th>
+                  <th>Remove?</th>
                 </tr>
                 <tr>
 
                 <tr >
                     <td>Split Electricy Bill</td>
                     <td class="tdRightSide"><img src="img/emptyCircle.png" /></td>
+                    <td class="tdRightSide"><img src="img/remove.png" /></td>
                 </tr class="lastRow">
+                <tr>
                   <td class="complete">Put Up Christmas Tree</td>
                   <td class="tdRightSide"><img src="img/successCircle.png" /></td>
+                  <td class="tdRightSide"><img src="img/remove.png" /></td>
                 </tr>
 
 
