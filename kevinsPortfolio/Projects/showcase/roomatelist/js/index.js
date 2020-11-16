@@ -5,7 +5,12 @@ let table = document.getElementById('toDoTable').getElementsByTagName('tbody')[0
 console.log(typeof addinputText.value);
 
 addItem();
+changeButtonColorWhenHovering(addButton);
+changeButtonColorWhenHoveringOff(addButton)
 
+
+
+//adds the item in the text input when the button is clicked
 function addItem(){
 
     //Append to table
@@ -25,7 +30,7 @@ function addItem(){
     });
 }
 
-
+//Adds item when enter button is clicked
 function addItemEnterButton(){
     addinputText.addEventListener('keydown', event =>{
 
@@ -40,6 +45,20 @@ function addItemEnterButton(){
             }            
         }
 
+    });
+}
+
+
+function changeButtonColorWhenHovering (button){
+    button.addEventListener('mouseover', () =>{
+        addButton.style.opacity = .5;
+        
+    });
+}
+
+function changeButtonColorWhenHoveringOff (button){
+    button.addEventListener('mouseout', () =>{
+        addButton.style.opacity = 1;
     });
 }
 
