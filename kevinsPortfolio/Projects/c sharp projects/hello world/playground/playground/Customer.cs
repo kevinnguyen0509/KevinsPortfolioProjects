@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace playground
 {
-    class customer
+
+    public abstract class Person {
+      
+        public string Name { get; set; }
+
+        public void UpdateName(string newName)
+        {
+            Name = newName;
+        }
+    }
+    public class Customer : Person
     {
+        public int CustomerId { get; set; }
+    }
+
+    public class Supplier : Person{
+        public int CustomerId { get; set; }
     }
 }

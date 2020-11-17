@@ -10,6 +10,9 @@ namespace playground
     {
         static void Main(string[] args)
         {
+            var calc = new Calculator();
+            var result = calc.PerformCalc(1, 2);
+            Console.WriteLine(result);
         }
     }
 
