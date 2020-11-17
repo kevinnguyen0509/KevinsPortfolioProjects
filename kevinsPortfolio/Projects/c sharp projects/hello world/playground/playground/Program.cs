@@ -12,4 +12,11 @@ namespace playground
         {
         }
     }
+
+    class MyObject {
+        string MyStringProperty { get; set; }
+        void MyMethod(string input, int value) {
+
+        }
+    }
 }
