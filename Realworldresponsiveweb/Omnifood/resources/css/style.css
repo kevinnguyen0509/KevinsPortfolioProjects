@@ -1,0 +1,132 @@
+/**
+#e67e22 - orange color
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #fff;
+  color: #555;
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+}
+/**************************
+*    Reuseable Code   
+**************************/
+.row {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+/**************************
+*    Headings   
+**************************/
+h1 {
+  margin: 0;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 240%;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 4px;
+}
+
+/**************************
+*    Nav bar   
+**************************/
+
+.logo {
+  height: 100px;
+  width: auto;
+  float: left;
+  margin-top: 10px;
+}
+
+.main-nav {
+  float: right;
+  list-style: none;
+  margin-top: 48px;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+  padding: 8px 0;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 90%;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+  border-bottom: 2px solid #e67e22;
+}
+
+/**************************
+*    Buttons  
+**************************/
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 300;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+  margin-right: 15px;
+  background-color: #e67e22;
+  border-radius: 200px;
+  border: 1px solid #e67e22;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+  border: 1px solid #e67e22;
+  border-radius: 200px;
+  color: #e67e22;
+}
+.btn:hover,
+.btn:active {
+  background-color: #cf6d17;
+  color: #fff;
+  border-color: #cf6d17;
+}
+/**************************
+*    Header   
+**************************/
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../img/hero.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+/****custom blocks*****/
+.hero-text-box {
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
