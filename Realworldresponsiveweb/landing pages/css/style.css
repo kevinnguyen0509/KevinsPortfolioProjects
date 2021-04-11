@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  font-family: "Kiwi Maru", sans-serif;
+  font-weight: 200;
+  font-size: 24px;
+}
+
+strong {
+  color: #ff8d62;
+}
+/**********headings*****************/
+h1,
+h2 {
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 90%;
+}
+.name {
+  border: 1px solid rgb(120, 197, 221);
+}
+
+.subheading {
+  font-style: italic;
+  color: #ff8d62;
+}
+/**********Containers*****************/
+.row,
+.row2 {
+  width: 50%;
+  background-color: #f3f9ff;
+  float: left;
+  position: relative;
+  height: 100vh;
+  text-align: center;
+}
+.row1-content {
+  margin-left: 10%;
+  margin-right: 10%;
+  position: absolute;
+  transform: translate(0, 20%);
+}
+.row2 {
+  background-image: url(../img/aboutuscanada.jpg);
+  background-size: cover;
+  background-position: center;
+}
+/**********Nav/ links*****************/
+ul li {
+  display: inline-block;
+  margin-right: 0px;
+  border: 1px solid #adc6db;
+  padding: 10px;
+}
+
+ul li:hover,
+ul li:active {
+  background-color: rgb(120, 197, 221);
+  border: 0;
+  transition: background-color 0.5s;
+}
+
+/**********Content*****************/
+.paragraph-description1,
+.paragraph-description2 {
+  margin-bottom: 20px;
+}
+.paragraph-description1 {
+  border-top: 1px solid #abb8c2;
+}
+
+.paragraph-description2 {
+  border-bottom: 1px solid #abb8c2;
+  padding-bottom: 60px;
+  margin-bottom: 50px;
+}
