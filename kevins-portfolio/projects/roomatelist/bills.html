@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Bills</title>
+        <link rel="stylesheet" href="css/bills.css" >
+        
+    </head>
+
+    <nav></nav>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="primary col">
+                    <input type="text" id="addItem" class="textInput" name="input" placeholder="+ Add more todo items.."  onkeydown="addItemEnterButton()" />
+                </div>
+                <div class="secondary col">
+                    <button type="button" class="button" id="addButton">+</button>       
+                </div>
+
+            </div>
+
+            <h1>Bills List</h1>
+
+            <table id="toDoTable">
+                <tr>
+                  <th>Expense</th>
+                  <th>Amount</th>
+                  <th>Amount Spent</th>
+                  <th>Remove/paid?</th>
+                </tr>
+                <tr>
+
+                <tr >
+                    <td>Split Electricy Bill</td>
+                    <td>$50.00</td>
+                    <td class="tdRightSide"><img src="img/emptyCircle.png" /></td>
+                    <td class="tdRightSide"><img src="img/remove.png" /></td>
+                </tr class="lastRow">
+                <tr>
+                  <td class="complete">Internet</td>
+                  <td>35.00</td>
+                  <td class="tdRightSide"><img src="img/successCircle.png" /></td>
+                  <td class="tdRightSide"><img src="img/remove.png" /></td>
+                </tr>
+
+
+    
+                
+                <div id="newContentPlaceHolder">
+                    <!--innerHTML to this spot -->
+                </div>
+              </table>  
+
+              
+        </div>
+        <Footer>
+            
+            <a href="index.html"><img class="chores" title="ToDo List" src="icon/todo.png" /></a>
+            <div class="vl"></div>
+            <a href="Grocerylist.html"><img class="food" title="Grocery List" src="icon/food.png" /></a>
+            <div class="vl"></div>
+            <a href="bills.html"><img class="bills" title="Split the bills" src="icon/bills.png" /></a>
+
+        </Footer>
+        <script src="js/bills.js"></script>
+    </body>
+</html>  
