@@ -15,61 +15,61 @@ let modalgithubUrl = "";
 
 const porfolioInfoArray = [
   {
-    img: "/resources/img/portfolio/guessMyNumber.PNG",
+    img: "resources/img/portfolio/guessMyNumber.PNG",
     title: "Guessing Game",
     desciption:
       "This game uses Javascript to determine if you are able to guess the mystery number behind the question mark.",
-    portfolio_url: "/projects/guessMyNumberGame/index.html",
+    portfolio_url: "projects/guessMyNumberGame/index.html",
     github_url:
       "https://github.com/kevinnguyen0509/KevinsPortfolioProjects/tree/master/kevinsPortfolio/Projects/showcase/guessMyNumberGame",
   },
 
   {
-    img: "/resources/img/portfolio/pig.game.PNG",
+    img: "resources/img/portfolio/pig.game.PNG",
     title: "Pig Game",
     desciption:
       "This game uses Javascript to build a small interactive game for 2 players to roll a dice. The object of the game is to get to 100.",
-    portfolio_url: "/projects/pig-game/index.html",
+    portfolio_url: "projects/pig-game/index.html",
     github_url:
       "https://github.com/kevinnguyen0509/KevinsPortfolioProjects/tree/master/kevinsPortfolio/Projects/showcase/pig-game",
   },
 
   {
-    img: "/resources/img/portfolio/bestcity.PNG",
+    img: "resources/img/portfolio/bestcity.PNG",
     title: "Best City Guide",
     desciption:
       "This website is to demostrate a static website that was build using flex boxes to make everything responsive to different screen sizes",
-    portfolio_url: "/projects/Best City Guide/index.html",
+    portfolio_url: "projects/Best City Guide/index.html",
     github_url:
       "https://github.com/kevinnguyen0509/KevinsPortfolioProjects/tree/master/kevinsPortfolio/Projects/showcase/Best%20City%20Guide",
   },
 
   {
-    img: "/resources/img/portfolio/Roomatelist.png",
+    img: "resources/img/portfolio/Roomatelist.png",
     title: "Roommate List",
     desciption:
       "This website is to demostrate a static website that updates without hitting the refresh. This will eventually become an app but for now its a work in progress",
-    portfolio_url: "/projects/roomatelist/index.html",
+    portfolio_url: "projects/roomatelist/index.html",
     github_url:
       "https://github.com/kevinnguyen0509/KevinsPortfolioProjects/tree/master/kevinsPortfolio/Projects/showcase/roomatelist",
   },
 
   {
-    img: "/resources/img/portfolio/bootstrapDemo.png",
+    img: "resources/img/portfolio/bootstrapDemo.png",
     title: "First Stack",
     desciption:
       "This website is to demostrate a static website that is built to be responsive with bootstrap",
-    portfolio_url: "/projects/BoostrapDemo 1/start/index.html",
+    portfolio_url: "projects/BoostrapDemo 1/start/index.html",
     github_url:
       "https://github.com/kevinnguyen0509/KevinsPortfolioProjects/tree/master/kevinsPortfolio/Projects/BoostrapDemo%201/start",
   },
 
   {
-    img: "/resources/img/portfolio/omnifood.PNG",
+    img: "resources/img/portfolio/omnifood.PNG",
     title: "Omnifood",
     desciption:
       "This website is to demostrate a static website that is built for asthetic design and small amounts of animation in ccs",
-    portfolio_url: "/projects/Omnifood/index.html",
+    portfolio_url: "projects/Omnifood/index.html",
     github_url:
       "https://github.com/kevinnguyen0509/KevinsPortfolioProjects/tree/master/Realworldresponsiveweb/Omnifood",
   },
