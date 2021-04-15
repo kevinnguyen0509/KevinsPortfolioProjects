@@ -2,6 +2,8 @@
 
 //variables
 const backgroundOverlay = document.querySelector(".background"); //black overlay
+const modalTwo = document.querySelector(".modal2");
+const backgroundOverlayTwo = document.querySelector(".background2"); //black overlay
 const modal = document.querySelector(".modal");
 const clickedOnImageArray = document.querySelectorAll(".portfolio-container");
 const contact = document.querySelector(".contact");
@@ -78,6 +80,11 @@ const closeModal = function () {
   modal.classList.add("hidden");
   backgroundOverlay.classList.add("hidden");
 };
+
+const closeModalTwo = function () {
+  modalTwo.classList.add("hidden");
+  backgroundOverlayTwo.classList.add("hidden");
+};
 const getModalContentAndReplace = function (
   modalImage,
   modalTitle,
@@ -107,6 +114,11 @@ const getModalContentAndReplace = function (
 const openModal = function () {
   modal.classList.remove("hidden");
   backgroundOverlay.classList.remove("hidden");
+};
+
+const openModalTwo = function () {
+  modalTwo.classList.remove("hidden");
+  backgroundOverlayTwo.classList.remove("hidden");
 };
 const openModalClicked = function (index) {
   //replace with info from index 1
@@ -155,6 +167,7 @@ for (let i = 0; i < clickedOnImageArray.length; i++) {
 }
 
 contact.addEventListener("click", function () {
-  openModal();
+  openModalTwo();
 });
+backgroundOverlayTwo.addEventListener("click", closeModalTwo);
 backgroundOverlay.addEventListener("click", closeModal);

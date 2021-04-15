@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="vendor/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="vendor/css/grid.css" />
     <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="resources/css/modal.css" />
   </head>
 
   <body>
@@ -73,7 +74,9 @@
           <a href="index.html"
             ><img src="resources/img/logos/home-outline.svg"
           /></a>
-          <a href="#"><img src="resources/img/logos/mail-outline.svg" /></a>
+          <a href="#"
+            ><img src="resources/img/logos/mail-outline.svg" class="contact"
+          /></a>
           <a
             href="https://www.linkedin.com/in/kevin-nguyen-25134566/"
             target="_blank"
@@ -87,5 +90,41 @@
         </div>
       </div>
     </div>
+
+    <div class="background2 hidden"></div>
+    <div class="modal2 hidden">
+      <div class="modal-top-side">
+        <img src="/resources/img/profile.png" />
+      </div>
+
+      <div class="bottom-side">
+        <div class="modal-title">
+          <h5>Want to chat?</h5>
+        </div>
+
+        <div class="description-container2">
+          <h6>
+            <div class="phone-block">
+              <img
+                src="/resources/img/logos/call-outline.svg"
+                alt=""
+              />206-850-4170
+            </div>
+            <div class="email-block">
+              <img src="/resources/img/logos/mail-outline.svg" alt="" />
+              Kevin.Nguyen0509@gmail.com
+            </div>
+          </h6>
+        </div>
+
+        <div class="btn-container2">
+          <div class="portfolio-btn-container">
+            <a href="mailto: Kevin.Nguyen0509@gmail.com">Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/resources/js/portfolio.js"></script>
   </body>
 </html>
