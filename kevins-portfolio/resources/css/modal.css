@@ -2,8 +2,8 @@
 
 .background,
 .background2 {
-  position: absolute;
-  height: 100%;
+  position: fixed;
+  height: 150%;
   width: 100%;
   background-color: #000;
   border-radius: 0;
@@ -14,6 +14,7 @@
 .modal,
 .modal2 {
   position: absolute;
+
   background-color: #ffff;
   height: 560px;
   width: 500px;

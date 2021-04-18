@@ -23,16 +23,19 @@ col.span-1-of-2 {
   height: 100vh;
   float: left;
 }
-
+.row-left {
+  width: fit-content;
+}
 .row {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../img/mecolor.jpg);
+  position: fixed;
 }
 
 .row2 {
   padding-top: 50px;
-  padding-left: 100px;
-
+  padding-right: 100px;
+  float: right;
   width: 65%;
 }
 
