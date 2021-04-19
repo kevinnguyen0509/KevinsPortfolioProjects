@@ -1,8 +1,7 @@
 @media screen and (max-width: 1000px) {
-  .player {
-    height: 110%;
-  }
-
+  /********************/
+  /*     Buttons      */
+  /********************/
   .btn--roll {
     top: 38.3rem;
   }
@@ -10,18 +9,9 @@
     top: 53.5rem;
   }
 
-  .score {
-    font-size: 500%;
-  }
-
-  .current {
-    height: 20%;
-    margin-bottom: 40px;
-  }
-
-  .player--not--active {
-    display: none;
-  }
+  /********************/
+  /*     Players      */
+  /********************/
 
   #name--0,
   #name--1 {
@@ -29,8 +19,28 @@
     margin-top: 30px;
   }
 
+  .player {
+    height: 110%;
+  }
+
   .player--1 {
     background-color: rgba(255, 255, 255, 0.6);
+  }
+
+  .player--not--active {
+    display: none;
+  }
+
+  /********************/
+  /*     score objs      */
+  /********************/
+  .score {
+    font-size: 500%;
+  }
+
+  .current {
+    height: 20%;
+    margin-bottom: 40px;
   }
 
   .dice {
