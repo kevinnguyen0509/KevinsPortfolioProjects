@@ -8,13 +8,15 @@
   box-sizing: border-box;
 }
 
-html {
+html,
+body {
   background-color: #fff;
   color: #555;
   font-family: "Lato", Arial, sans-serif;
   font-size: 20px;
   font-weight: 300;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
 .clearfix::after {
@@ -274,15 +276,19 @@ header {
 .works-step div {
   float: left;
   border: 2px solid #e67e22;
-
+  clear: both;
   height: 55px;
   width: 55px;
   border-radius: 50%;
   text-align: center;
-
+  margin-bottom: 10px;
   padding: 5px;
   font-size: 150%;
   margin-right: 25px;
+}
+
+.works-step p {
+  margin-bottom: 20px;
 }
 
 .btn-app img {
