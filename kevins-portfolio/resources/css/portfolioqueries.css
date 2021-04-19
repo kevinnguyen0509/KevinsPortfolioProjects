@@ -1,0 +1,114 @@
+@media screen and (max-width: 1330px) {
+  .portfolio-list-container,
+  .portfolio-list-container-two {
+    width: 50%;
+    float: left;
+  }
+
+  .portfolio-container {
+    float: none;
+    margin: 0;
+    width: 100%;
+  }
+  .portfolio-container img {
+    clear: both;
+    width: 100%;
+  }
+
+  .portfolio-list-container-two::after {
+    width: 0;
+    height: 0;
+    margin: 0 auto;
+  }
+
+  .right-side h2 {
+    margin-top: 0px;
+    text-align: left;
+    font-size: 100%;
+  }
+}
+
+@media screen and (max-width: 1055px) {
+  .portfolio-list-container,
+  .portfolio-list-container-two {
+    width: 100%;
+    float: left;
+  }
+  .row2 {
+    padding-right: 4%;
+  }
+
+  .modal,
+  .modal2 {
+    position: fixed;
+  }
+
+  .div-icon-container {
+    margin-left: 20%;
+  }
+
+  .social-media2 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    margin-left: 30%;
+    margin-top: 10%;
+  }
+
+  .social-media img {
+    width: 20%;
+  }
+
+  .right-side h1 {
+    text-align: center;
+    margin-right: 0;
+  }
+
+  .right-side h2 {
+    margin-top: 0px;
+    text-align: center;
+    font-size: 1x;
+  }
+
+  .div-icon-container::before {
+    margin-top: 100px;
+
+    margin-left: 28%;
+  }
+}
+
+@media screen and (max-width: 795px) {
+  .social-media2 img {
+    width: 15%;
+  }
+
+  .social-media2 {
+    margin-top: 18%;
+    margin-left: 30%;
+  }
+
+  .modal,
+  .modal2 {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 595px) {
+  .social-media2 {
+    margin-top: 30%;
+    margin-left: 30%;
+  }
+
+  .div-icon-container {
+    width: 50%;
+    margin-left: 30%;
+  }
+
+  .div-icon-container::before {
+    margin-left: 5%;
+  }
+  .right-side h5 {
+    font-size: 50%;
+  }
+}
