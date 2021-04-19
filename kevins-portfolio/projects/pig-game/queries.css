@@ -1,0 +1,44 @@
+@media screen and (max-width: 1000px) {
+  .player {
+    height: 110%;
+  }
+
+  .btn--roll {
+    top: 38.3rem;
+  }
+  .btn--hold {
+    top: 53.5rem;
+  }
+
+  .score {
+    font-size: 500%;
+  }
+
+  .current {
+    height: 20%;
+    margin-bottom: 40px;
+  }
+
+  .player--not--active {
+    display: none;
+  }
+
+  #name--0,
+  #name--1 {
+    font-size: 300%;
+    margin-top: 30px;
+  }
+
+  .player--1 {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
+  .dice {
+    height: 10%;
+    left: 50%;
+    top: 26.5rem;
+    transform: translateX(-50%);
+    height: 10rem;
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+  }
+}

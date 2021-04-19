@@ -29,12 +29,34 @@ function switchPlayers() {
   ).textContent = currentRollScore;
   //switch players
   activePlayer = activePlayer === 0 ? 1 : 0;
+
   player0Element.classList.toggle('player--active');
   player1Element.classList.toggle('player--active');
+
+  player0Element.classList.toggle('player--not--active');
+  player1Element.classList.toggle('player--not--active');
+
+  if (window.innerWidth <= 1000) {
+    //hide non active section
+    player1Element.classList.remove('hidden');
+    player0Element.classList.remove('hidden');
+  }
+}
+
+if (window.innerWidth <= 1000 && activePlayer == 0) {
+  //hide non active section
+  player1Element.classList.add('hidden');
+  player0Element.classList.remove('hidden');
+} else if (window.innerWidth <= 1000 && activePlayer == 1) {
+  //hide non active section
+
+  player1Element.classList.remove('hidden');
+  player0Element.classList.add('hidden');
 }
 rollDiceButton.addEventListener('click', function () {
   //1) Generate a random dice roll
   const diceRollResult = Math.trunc(Math.random() * 6) + 1;
+  dice.classList.remove('hidden');
   //2) Display dice
   dice.classList.remove('hidden');
   dice.src = `img/dice-${diceRollResult}.png`;
@@ -51,6 +73,7 @@ rollDiceButton.addEventListener('click', function () {
 
 holdButton.addEventListener('click', function () {
   //1) Add current score to active player's score
+  dice.classList.add('hidden');
   score[activePlayer] += currentRollScore;
   document.getElementById(`current--${activePlayer}`).textContent =
     score[activePlayer];
@@ -64,11 +87,27 @@ holdButton.addEventListener('click', function () {
     player0Element.classList.add('player--winner');
     rollDiceButton.disabled = true;
     holdButton.disabled = true;
+    activePlayer = 0;
+
+    player0Element.classList.toggle('player--active');
+    player1Element.classList.toggle('player--active');
+    dice.classList.add('hidden');
+
+    player0Element.classList.toggle('player--not--active');
+    player1Element.classList.toggle('player--not--active');
   } else if (score[1] >= 100) {
+    activePlayer = 1;
     console.log('player 2 wins');
     player1Element.classList.add('player--winner');
     rollDiceButton.disabled = true;
     holdButton.disabled = true;
+
+    player0Element.classList.toggle('player--active');
+    player1Element.classList.toggle('player--active');
+
+    player0Element.classList.toggle('player--not--active');
+    player1Element.classList.toggle('player--not--active');
+    dice.classList.add('hidden');
   }
 });
 
@@ -85,4 +124,6 @@ newGameButton.addEventListener('click', function () {
 
   rollDiceButton.disabled = false;
   holdButton.disabled = false;
+  dice.classList.remove('hidden');
+  location.reload();
 });
