@@ -1,0 +1,103 @@
+@media screen and (max-width: 1050px) {
+  header h1 {
+    margin-top: 5px;
+    font-size: 200%;
+  }
+  .between {
+    top: 2rem;
+    right: 0%;
+  }
+  .again {
+    top: 2rem;
+    left: 0;
+  }
+  .left {
+    text-align: center;
+    width: 100%;
+    display: block;
+    flex-direction: none;
+    align-items: center;
+  }
+
+  .guess {
+    display: block;
+    margin-top: 100px;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .right {
+    display: block;
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  main {
+    display: block;
+  }
+
+  .check {
+    margin-right: auto;
+    margin-bottom: 40px;
+  }
+
+  .message {
+    margin-bottom: 4rem;
+    height: 3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header h1 {
+    margin-top: 20px;
+    font-size: 200%;
+  }
+  .between {
+    text-align: center;
+    top: 2rem;
+    right: 0;
+    left: 0;
+  }
+
+  .again {
+    top: 4rem;
+    left: 9rem;
+  }
+
+  .left {
+    width: 100%;
+    display: block;
+    flex-direction: none;
+    align-items: center;
+  }
+
+  .guess {
+    display: block;
+    margin-top: 100px;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .right {
+    display: block;
+    width: 100%;
+    font-size: 2rem;
+  }
+
+  main {
+    display: block;
+  }
+
+  .check {
+    margin-right: auto;
+    margin-bottom: 40px;
+  }
+
+  .message {
+    margin-bottom: 4rem;
+    height: 3rem;
+  }
+}
