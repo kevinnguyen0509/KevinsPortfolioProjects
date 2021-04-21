@@ -1,0 +1,39 @@
+body {
+  background-color: #f7f4f4;
+}
+.container {
+  width: 60%; /*When we do mobile design change this to 100% */
+  margin: 0 auto;
+}
+
+.flaticonss::before {
+  font-size: 60px;
+  margin: 0;
+  display: block;
+}
+.col-container {
+  display: flex;
+}
+.item-container {
+  background-color: rgb(102, 12, 187);
+  color: rgba(228, 222, 222, 0.801);
+  box-shadow: 2px 2px 4px rgb(173, 168, 168);
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  float: left;
+  margin-right: 5px;
+  text-align: center;
+
+  margin-bottom: 5px;
+}
+
+.item-container p {
+  text-align: center;
+  font-size: 120%;
+  margin: 0;
+}
+
+.item-container img {
+  width: 80px;
+}
