@@ -10,6 +10,10 @@
       type="text/css"
       href="vendors/css/ionicons.min.css"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="stylesheet" type="text/css" href="resources/css/queries.css" />
@@ -22,30 +26,39 @@
 
   <body>
     <header>
-      <nav>
+      <nav class="js--nav">
         <div class="row">
+          <a href="#home">          
+            <img
+            class="logo-black"
+            src="resources/img/logo.png"
+            alt="Omnifood logo black"
+          /></a>
           <img
+           
             class="logo"
             src="resources/img/logo-white.png"
             alt="Omnifood logo white"
           />
+
+
           <ul class="main-nav">
-            <li><a href="#">Food Delivery</a></li>
-            <li><a href="#">How It Works</a></li>
-            <li><a href="#">Our City</a></li>
-            <li><a href="#">Sign Up</a></li>
+            <li><a href="#features">Food Delivery</a></li>
+            <li><a href="#howitworks">How It Works</a></li>
+            <li><a href="#ourcity">Our City</a></li>
+            <li><a href="#signup">Sign Up</a></li>
           </ul>
         </div>
       </nav>
-      <div class="hero-text-box">
+      <div class="hero-text-box" id="home">
         <h1>Goodbye junk food. <br />Hello super healthy meals.</h1>
-        <a class="btn btn-full" href="#">I’m hungry </a>
-        <a class="btn btn-ghost" href="#">Show me more </a>
+        <a class="btn btn-full js--scroll-to-plan " href="#">I'm hungry </a>
+        <a class="btn btn-ghost js--scroll-to-start" href="#">Show me more </a>
       </div>
     </header>
 
-    <section class="section-features">
-      <div class="row">
+    <section class="section-features js--section-features" id="features">
+      <div class="row js--wp-1">
         <h2>Get food fast &mdash; not fast food.</h2>
         <p class="long-copy">
           Hello, we’re Omnifood, your new premium food delivery service. We know
@@ -55,7 +68,7 @@
       </div>
 
       <div class="row">
-        <div class="col span-1-of-4 box">
+        <div class="col span-1-of-4 box js--box-1">
           <i class="ion-ios-infinite-outline icon-big"></i>
           <h3>Up to 365 days/year</h3>
           <p>
@@ -65,7 +78,7 @@
           </p>
         </div>
 
-        <div class="col span-1-of-4 box">
+        <div class="col span-1-of-4 box js--box-2">
           <i class="ion-ios-stopwatch-outline icon-big"></i>
           <h3>Ready in 20 minutes</h3>
           <p>
@@ -75,7 +88,7 @@
           </p>
         </div>
 
-        <div class="col span-1-of-4 box">
+        <div class="col span-1-of-4 box js--box-3">
           <i class="ion-ios-nutrition-outline icon-big"></i>
           <h3>100% organic</h3>
           <p>
@@ -85,7 +98,7 @@
           </p>
         </div>
 
-        <div class="col span-1-of-4 box">
+        <div class="col span-1-of-4 box js--box-4">
           <i class="ion-ios-cart-outline icon-big"></i>
           <h3>Order anything</h3>
           <p>
@@ -175,7 +188,7 @@
       <!--End of Second-->
     </section>
 
-    <section class="section-steps">
+    <section class="section-steps js--how-it-works" id="howitworks">
       <div class="row">
         <h2>How it works &mdash; Simple as 1, 2, 3</h2>
       </div>
@@ -185,7 +198,7 @@
           <img
             src="resources/img/app-iPhone.png"
             alt="Omnifood app on Iphone"
-            class="app-screen"
+            class="app-screen js--how-it-works-phone"
           />
         </div>
 
@@ -226,12 +239,12 @@
       </div>
     </section>
 
-    <section class="section-city">
-      <div class="row">
+    <section class="section-city" id="ourcity">
+      <div class="row js--current-cities">
         <h2>We're currently in these cities</h2>
       </div>
 
-      <div class="row">
+      <div class="row js--current-cities-details">
         <div class="col span-1-of-4 box">
           <img src="resources/img/lisbon-3.jpg" alt="Lisbon" />
           <h3>Lisbon</h3>
@@ -356,10 +369,10 @@
       </div>
     </section>
 
-    <section class="section-plans">
-      <div class="row"><h2>Start eating healthy today</h2></div>
+    <section class="section-plans js--section-plans">
+      <div class="row "><h2>Start eating healthy today</h2></div>
       <div class="row">
-        <div class="col span-1-of-3">
+        <div class="col span-1-of-3 js--price1">
           <div class="plan-box">
             <div class="price">
               <h3>Premium</h3>
@@ -384,7 +397,7 @@
         </div>
         <!--End Section pricing-->
 
-        <div class="col span-1-of-3">
+        <div class="col span-1-of-3 js--price2">
           <div class="plan-box">
             <div class="price">
               <h3>Pro</h3>
@@ -410,7 +423,7 @@
         </div>
         <!--End Section pricing-->
 
-        <div class="col span-1-of-3">
+        <div class="col span-1-of-3 js--price3">
           <div class="plan-box">
             <div class="price">
               <h3>Premium</h3>
@@ -439,13 +452,13 @@
       </div>
     </section>
 
-    <section>
-      <div class="row">
+    <section id="signup">
+      <div class="row" >
         <h2>We're happy to hear from you</h2>
       </div>
 
       <div class="row">
-        <form method="POST" action="#" class="contact-form">
+        <form action="#signup" class="contact-form" id="signup">
           <div class="row">
             <div class="col span-1-of-3"><label for="name">Name</label></div>
             <div class="col span-2-of-3"><input type="text" name="name" id="name" placeholder="name" required /></div>
@@ -514,6 +527,10 @@
         </div>
       </div>
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script src="resources/js/script.js"></script>
   </body>
 </html>
 
