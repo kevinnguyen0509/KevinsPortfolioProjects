@@ -114,3 +114,9 @@ $(".js--price1").waypoint(
     offset: "50%",
   }
 );
+/*selecting mobile button*/
+$(".js--nav-icon").click(function () {
+  let nav = $(".js--main-nav");
+
+  nav.slideToggle(200);
+});

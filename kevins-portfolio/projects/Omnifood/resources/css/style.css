@@ -160,6 +160,21 @@ h2::after {
   border-bottom: 2px solid #e67e22;
 }
 
+/**************************
+*    Nav bar  Mobile 
+**************************/
+.mobile-nav-icon {
+  float: right;
+  margin-top: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+.mobile-nav-icon i {
+  color: #fff;
+  font-size: 200%;
+}
+
 /*stick nav*/
 .sticky {
   position: fixed;
