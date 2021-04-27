@@ -106,7 +106,7 @@ body {
     border: none;
     padding: 0.7rem 2rem;
     border-radius: 200px;
-    width: 90%;
+    width: 50%;
     transition: all 0.2s;
     margin-right: -3.5rem; }
     .search__input:focus {
