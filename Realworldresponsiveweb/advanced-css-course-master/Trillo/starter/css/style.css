@@ -43,6 +43,9 @@ Grey dark 3: #999
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 68.75em) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: "Open Sanas", sans-serif;
@@ -61,6 +64,10 @@ body {
   background-color: var(--color-Grey-light-2);
   box-shadow: var(--shadow-dark);
   min-height: 50rem; }
+  @media only screen and (max-width: 75em) {
+    .container {
+      margin: 0;
+      width: 100%; } }
 
 .header {
   font-size: 1.4rem;
@@ -73,6 +80,9 @@ body {
 
 .content {
   display: flex; }
+  @media only screen and (max-width: 56.25em) {
+    .content {
+      flex-direction: column; } }
 
 .sidebar {
   background-color: var(--color-Grey-dark-1);
@@ -93,6 +103,12 @@ body {
   padding: 4.5rem;
   background-color: var(--color-Grey-light-1);
   border-bottom: var(--line); }
+  @media only screen and (max-width: 56.25em) {
+    .detail {
+      padding: 3rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .detail {
+      flex-direction: column; } }
 
 .description {
   font-size: 1.4rem;
@@ -103,6 +119,14 @@ body {
   flex-shrink: 0;
   flex-basis: 60%;
   margin-right: 4.5rem; }
+  @media only screen and (max-width: 56.25em) {
+    .description {
+      padding: 2rem;
+      margin-right: 3rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .description {
+      margin-right: 0rem;
+      margin-bottom: 3rem; } }
 
 .user-reviews {
   flex-grow: 1; }
@@ -212,6 +236,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; }
+  @media only screen and (max-width: 38.43em) {
+    .user-nav__user {
+      display: none; } }
   .user-nav__user-photo {
     position: relative;
     z-index: 10;
@@ -228,8 +255,16 @@ body {
   font-size: 1.4rem;
   list-style: none;
   margin-top: 3.5rem; }
+  @media only screen and (max-width: 56.25em) {
+    .side-nav {
+      display: flex;
+      margin: 0;
+      justify-content: center; } }
   .side-nav__item {
     position: relative; }
+    @media only screen and (max-width: 56.25em) {
+      .side-nav__item {
+        flex-grow: 1; } }
     .side-nav__item:not(:last-child) {
       margin-bottom: 0.5rem; }
   .side-nav__item::before {
@@ -257,11 +292,22 @@ body {
     z-index: 10;
     display: flex;
     align-items: center; }
+    @media only screen and (max-width: 56.25em) {
+      .side-nav__link:link, .side-nav__link:visited {
+        justify-content: center; } }
+    @media only screen and (max-width: 38.43em) {
+      .side-nav__link:link, .side-nav__link:visited {
+        flex-direction: column; } }
   .side-nav__icon {
     width: 1.75rem;
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor; }
+    @media only screen and (max-width: 56.25em) {
+      .side-nav__icon {
+        margin-right: 0rem;
+        width: 1.5rem;
+        height: 1.5rem; } }
 
 /*******************************************/
 /***legal***/
@@ -270,6 +316,9 @@ body {
   padding: 2.5rem;
   text-align: center;
   font-size: 1.2rem; }
+  @media only screen and (max-width: 56.25em) {
+    .legal {
+      display: none; } }
 
 /*******************************************/
 /***Gallery***/
@@ -291,6 +340,10 @@ body {
     letter-spacing: 1px;
     text-transform: uppercase;
     padding: 1.5rem 3rem; }
+    @media only screen and (max-width: 38.43em) {
+      .overview__heading {
+        font-size: 1.8rem;
+        padding: 1.25rem 2rem; } }
   .overview__stars {
     margin-right: auto;
     display: flex; }
@@ -314,13 +367,22 @@ body {
     align-items: center;
     flex-direction: column;
     justify-content: center; }
+    @media only screen and (max-width: 38.43em) {
+      .overview__rating {
+        padding: 0 1.25rem; } }
   .overview__rating-count {
     font-size: 0.8rem;
     text-transform: uppercase; }
+    @media only screen and (max-width: 38.43em) {
+      .overview__rating-count {
+        font-size: 0.8rem; } }
   .overview__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: -3px; }
+    @media only screen and (max-width: 38.43em) {
+      .overview__rating-average {
+        font-size: 1.8rem; } }
 
 /*******************************************/
 /***Button inline***/
@@ -382,10 +444,12 @@ body {
     width: 4rem;
     border-radius: 50%; }
     .recommend__photo:not(:last-child) {
-      margin-right: -1.5rem;
+      margin-right: -2rem;
       border: 3px solid #fff; }
   .recommend__count {
     margin-right: auto; }
+  .recommend__friends {
+    display: flex; }
 
 /*******************************************/
 /***Reviews***/
@@ -396,6 +460,10 @@ body {
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden; }
+  @media only screen and (max-width: 56.25em) {
+    .review {
+      padding: 2rem;
+      margin-bottom: 3rem; } }
   .review__text {
     margin-bottom: 2rem;
     position: relative;
@@ -437,6 +505,9 @@ body {
 .cta {
   padding: 3.5rem 0;
   text-align: center; }
+  @media only screen and (max-width: 56.25em) {
+    .cta {
+      padding: 2.5rem 0; } }
   .cta__book-now {
     font-size: 2rem;
     text-transform: uppercase;

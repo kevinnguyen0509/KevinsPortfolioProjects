@@ -135,7 +135,11 @@
     justify-content: center;
     align-items: center;
   }
-
+  &__user {
+    @media only screen and (max-width: $bp-small) {
+      display: none;
+    }
+  }
   &__user-photo {
     position: relative;
     z-index: 10;
@@ -157,9 +161,18 @@
   font-size: 1.4rem;
   list-style: none;
   margin-top: 3.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+  }
   &__item {
     position: relative;
 
+    @media only screen and (max-width: $bp-medium) {
+      flex-grow: 1;
+    }
     &:not(:last-child) {
       margin-bottom: 0.5rem;
     }
@@ -198,12 +211,25 @@
     z-index: 10;
     display: flex;
     align-items: center;
+
+    @media only screen and (max-width: $bp-medium) {
+      justify-content: center;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+    }
   }
   &__icon {
     width: 1.75rem;
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor;
+    @media only screen and (max-width: $bp-medium) {
+      margin-right: 0rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
@@ -214,6 +240,10 @@
   padding: 2.5rem;
   text-align: center;
   font-size: 1.2rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    display: none;
+  }
 }
 
 /*******************************************/
@@ -241,6 +271,11 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     padding: 1.5rem 3rem;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
   }
 
   &__stars {
@@ -275,16 +310,27 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 1.25rem;
+    }
   }
   &__rating-count {
     font-size: 0.8rem;
     text-transform: uppercase;
+    @media only screen and (max-width: $bp-small) {
+      font-size: 0.8rem;
+    }
   }
 
   &__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: -3px;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+    }
   }
 }
 /*******************************************/
@@ -364,7 +410,7 @@
     border-radius: 50%;
 
     &:not(:last-child) {
-      margin-right: -1.5rem;
+      margin-right: -2rem;
       border: 3px solid #fff;
     }
   }
@@ -374,6 +420,7 @@
   }
 
   &__friends {
+    display: flex;
   }
 }
 
@@ -387,6 +434,10 @@
   position: relative;
   overflow: hidden;
 
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
   &__text {
     margin-bottom: 2rem;
     position: relative;
@@ -440,7 +491,9 @@
 .cta {
   padding: 3.5rem 0;
   text-align: center;
-
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2.5rem 0;
+  }
   &__book-now {
     font-size: 2rem;
     text-transform: uppercase;
