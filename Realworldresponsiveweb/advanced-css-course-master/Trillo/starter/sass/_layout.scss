@@ -35,6 +35,7 @@
 }
 
 .detail {
+  font-size: 1.4rem;
   display: flex;
   padding: 4.5rem;
   background-color: var(--color-Grey-light-1);
@@ -53,6 +54,5 @@
 }
 
 .user-reviews {
-  background-color: greenyellow;
   flex-grow: 1;
 }
