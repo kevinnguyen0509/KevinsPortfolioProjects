@@ -1,0 +1,42 @@
+:root {
+  --color-pink: #d83f87;
+  --color-purple-1: #2a1b3d;
+  --color-purple-2: #44318d;
+  --color-purple-3: #7f6ca2;
+  --color-teal-1: #a4b3b6;
+
+  --box-shadow: 0 0 10px #719ece;
+  --color-sky-blue: #719ece;
+}
+*,
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--color-teal-1);
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-purple-1),
+    var(--color-purple-2),
+    var(--color-purple-3)
+  );
+
+  background-repeat: no-repeat;
+}
+
+/***********Reuseable*****************/
+.center {
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
