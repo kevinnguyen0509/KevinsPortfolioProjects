@@ -2,6 +2,7 @@
 
 window.onload = function () {
   let searchBtn = document.querySelector(".search-container__search-icon");
+  let searchBox = document.querySelector(".search-container__search");
   let allCharts = document.querySelectorAll(".chart-container__charts");
   let titles = document.querySelectorAll(".title-container");
   let chartContainer = document.querySelectorAll(".chart-container");
@@ -147,37 +148,84 @@ window.onload = function () {
 
   //clicking button
   searchBtn.addEventListener("click", () => {
-    //hide landing page Tony
-    allCharts.forEach((element) => {
-      element.classList.add("hidden");
-    });
+    let searchBoxValue = searchBox.value.trim();
+    if (!searchBoxValue) {
+      console.log("do nothing");
+    } else {
+      //hide landing page Tony
+      allCharts.forEach((element) => {
+        element.classList.add("hidden");
+      });
 
-    titles.forEach((element) => {
-      element.classList.add("hidden");
-    });
-    loadingOne.classList.add("hidden");
-    //show tony the t-rex searching/loading
-
-    loading.classList.toggle("hidden");
-
-    //hide tony when search result is found
-    setTimeout(function () {
-      if (allCharts[0].classList.contains("hidden")) {
-        allCharts.forEach((element) => {
-          element.classList.remove("hidden");
-        });
-
-        titles.forEach((element) => {
-          element.classList.remove("hidden");
-        });
-      }
-
+      titles.forEach((element) => {
+        element.classList.add("hidden");
+      });
+      loadingOne.classList.add("hidden");
       //show tony the t-rex searching/loading
 
       loading.classList.toggle("hidden");
-    }, 2000);
+
+      //hide tony when search result is found
+      setTimeout(function () {
+        if (allCharts[0].classList.contains("hidden")) {
+          allCharts.forEach((element) => {
+            element.classList.remove("hidden");
+          });
+
+          titles.forEach((element) => {
+            element.classList.remove("hidden");
+          });
+        }
+
+        //show tony the t-rex searching/loading
+
+        loading.classList.toggle("hidden");
+      }, 2000);
+    }
 
     //if not found then show animation for not found
+  });
+
+  //clicking button
+  searchBox.addEventListener("keyup", (e) => {
+    if (e.key == "Enter" || e.keyCode === 13) {
+      let searchBoxValue = searchBox.value.trim();
+      if (!searchBoxValue) {
+        console.log("do nothing");
+      } else {
+        //hide landing page Tony
+        allCharts.forEach((element) => {
+          element.classList.add("hidden");
+        });
+
+        titles.forEach((element) => {
+          element.classList.add("hidden");
+        });
+        loadingOne.classList.add("hidden");
+        //show tony the t-rex searching/loading
+
+        loading.classList.toggle("hidden");
+
+        //hide tony when search result is found
+        setTimeout(function () {
+          if (allCharts[0].classList.contains("hidden")) {
+            allCharts.forEach((element) => {
+              element.classList.remove("hidden");
+            });
+
+            titles.forEach((element) => {
+              element.classList.remove("hidden");
+            });
+          }
+
+          //show tony the t-rex searching/loading
+
+          loading.classList.toggle("hidden");
+        }, 2000);
+      }
+
+      //if not found then show animation for not found
+    }
   });
   hideGraphsAndTitles();
   changeTitle();
