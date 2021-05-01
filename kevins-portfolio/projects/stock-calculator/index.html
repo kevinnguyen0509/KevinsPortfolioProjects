@@ -37,6 +37,8 @@
       </header>
 
       <div class="content">
+        <div>dfsfdsf</div>
+        <!--Filler-->
         <div class="sidebar-container">
           <ul class="icon-container">
             <li class="icon-container__item">
@@ -73,16 +75,65 @@
         <!--End of leftSidebar-->
 
         <div class="right-side">
-          <svg class="right-side__start-icon">
-            <use xlink:href="img/svg/sprite.svg#embarrassed" />
-          </svg>
+          <!--start of charts-->
+          <div class="title-container"><h1 class="title">Growth</h1></div>
 
-          <div class="right-side__speech center">
-            <h1>Hope I can grab what you're searching for...</h1>
+          <div class="chart-container growth">
+            <div id="chartContainer" class="chart-container__charts"></div>
+            <div id="chartContainer2" class="chart-container__charts"></div>
+            <div id="chartContainer3" class="chart-container__charts"></div>
           </div>
+
+          <div class="title-container"><h1 class="title">Moat Metrics</h1></div>
+          <div class="chart-container moat">
+            <div id="chartContainer5" class="chart-container__charts"></div>
+            <div id="chartContainer6" class="chart-container__charts"></div>
+            <div id="chartContainer7" class="chart-container__charts"></div>
+            <div id="chartContainer8" class="chart-container__charts"></div>
+          </div>
+
+          <div class="title-container"><h1 class="title">Debt metrics</h1></div>
+          <div class="chart-container debt">
+            <div id="chartContainer9" class="chart-container__charts"></div>
+            <div id="chartContainer10" class="chart-container__charts"></div>
+            <div id="chartContainer11" class="chart-container__charts"></div>
+            <div id="chartContainer12" class="chart-container__charts"></div>
+          </div>
+          <!--start screen screen-->
+          <div class="loading-one hidden">
+            <svg class="loading-one__start-icon-loading">
+              <use
+                class="start-icon__dino"
+                xlink:href="img/svg/sprite.svg#embarrassed"
+              />
+            </svg>
+
+            <div class="speech center">
+              <h1>
+                Hello, I'm Tony. I have little arms. What are we looking for?
+              </h1>
+            </div>
+          </div>
+          <!--end of start icon-->
+          <!--loading screen-->
+          <div class="loading hidden">
+            <svg class="start-icon">
+              <use
+                class="start-icon__dino"
+                xlink:href="img/svg/sprite.svg#embarrassed"
+              />
+            </svg>
+
+            <div class="speech center">
+              <h1>Hope I can grab what you're searching for...</h1>
+            </div>
+          </div>
+          <!--end of loading screen-->
         </div>
       </div>
       <!--end of content/right side-->
     </div>
+    <script src="js/charts.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   </body>
 </html>

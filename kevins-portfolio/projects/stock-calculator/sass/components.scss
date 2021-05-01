@@ -1,22 +1,28 @@
 /***********Right Side*****************/
-.right-side {
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
 
-  &__start-icon {
-    fill: var(--color-teal-1);
-    flex-basis: 100%;
-    margin-top: 3rem;
-  }
+.start-icon {
+  fill: var(--color-teal-1);
+
+  transform: translateX(-150px);
+  animation: walk 2s infinite;
 }
 
+.speech {
+  margin-top: 2rem;
+  flex-basis: 100%;
+}
 .side-icon {
   top: 0;
   width: 30px;
   height: 30px;
   fill: var(--color-teal-1);
   transition: all 0.5s;
+}
+.loading-one {
+  &__start-icon-loading {
+    fill: var(--color-teal-1);
+    animation: slowdance 3s infinite;
+  }
 }
 
 .side-icon:hover {
@@ -89,5 +95,78 @@
 }
 
 .icon-container:first-child {
-  margin-top: 1rem;
+  margin-top: 4rem;
+}
+
+/***********Chart*****************/
+
+.chart-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3rem 0;
+  &__charts {
+    height: 360px;
+    flex-basis: 49%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    box-shadow: var(--box-shadow);
+  }
+}
+
+.growth .chart-container__charts:first-child {
+  flex-basis: 100%;
+}
+
+.title-container {
+  position: relative;
+  height: 2%;
+}
+.title {
+  margin-bottom: 3rem;
+}
+.title::after {
+  content: "";
+  position: absolute;
+  width: 10%;
+  height: 5%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: var(--color-pink);
+}
+@keyframes walk {
+  0% {
+    transform: translateX(-150px);
+  }
+
+  50% {
+    transform: translateX(150px);
+  }
+  51% {
+  }
+
+  80% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: translateX(-150px);
+  }
+}
+
+@keyframes slowdance {
+  0% {
+  }
+
+  33% {
+    transform: rotate(20deg);
+  }
+
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
