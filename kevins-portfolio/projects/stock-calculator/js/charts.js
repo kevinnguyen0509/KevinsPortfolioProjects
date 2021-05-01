@@ -15,7 +15,7 @@ window.onload = function () {
       text: "Top Oil Reserves",
     },
     axisY: {
-      title: "Reserves(MMbbl)",
+      title: "Percentage/year",
     },
 
     data: [
@@ -23,7 +23,7 @@ window.onload = function () {
         type: "column",
         showInLegend: true,
         legendMarkerColor: "grey",
-        legendText: "MMbbl = one million barrels",
+        legendText: "Measures growth over the years",
         dataPoints: [
           { y: 300684, label: "Venezuela" },
           { y: 266455, label: "Saudi" },
