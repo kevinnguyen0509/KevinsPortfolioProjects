@@ -33,7 +33,7 @@
 .search-container {
   display: flex;
   flex-grow: 0;
-  flex-basis: 15%;
+  flex-basis: 20%;
   transition: all 0.5s;
   align-items: center;
   border-radius: 5px;
@@ -60,11 +60,12 @@
     width: 15px;
     height: 15px;
     fill: var(--color-teal-1);
+    cursor: pointer;
   }
 }
 
 .search-container:hover {
-  flex-basis: 20%;
+  flex-basis: 25%;
 
   border: 0;
   box-shadow: var(--box-shadow);
@@ -103,7 +104,9 @@
 .chart-container {
   display: flex;
   flex-wrap: wrap;
+  padding: 1%;
   margin: 3rem 0;
+  position: relative;
   &__charts {
     height: 360px;
     flex-basis: 49%;
@@ -114,6 +117,10 @@
 }
 
 .growth .chart-container__charts:first-child {
+  flex-basis: 100%;
+}
+
+.debt .chart-container__charts:first-child {
   flex-basis: 100%;
 }
 

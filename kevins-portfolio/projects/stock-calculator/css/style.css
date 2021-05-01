@@ -97,7 +97,7 @@ body {
 .search-container {
   display: flex;
   flex-grow: 0;
-  flex-basis: 15%;
+  flex-basis: 20%;
   transition: all 0.5s;
   align-items: center;
   border-radius: 5px; }
@@ -117,10 +117,11 @@ body {
   .search-container__search-icon {
     width: 15px;
     height: 15px;
-    fill: var(--color-teal-1); }
+    fill: var(--color-teal-1);
+    cursor: pointer; }
 
 .search-container:hover {
-  flex-basis: 20%;
+  flex-basis: 25%;
   border: 0;
   box-shadow: var(--box-shadow); }
 
@@ -148,7 +149,9 @@ body {
 .chart-container {
   display: flex;
   flex-wrap: wrap;
-  margin: 3rem 0; }
+  padding: 1%;
+  margin: 3rem 0;
+  position: relative; }
   .chart-container__charts {
     height: 360px;
     flex-basis: 49%;
@@ -157,6 +160,9 @@ body {
     box-shadow: var(--box-shadow); }
 
 .growth .chart-container__charts:first-child {
+  flex-basis: 100%; }
+
+.debt .chart-container__charts:first-child {
   flex-basis: 100%; }
 
 .title-container {
