@@ -41,19 +41,19 @@
         <!--Filler DO NOT DELETE-->
         <div class="sidebar-container">
           <ul class="icon-container">
-            <li class="icon-container__item">
+            <li class="icon-container__item" id="home">
               <svg class="side-icon">
                 <use xlink:href="img/svg/sprite.svg#home" />
               </svg>
             </li>
 
-            <li class="icon-container__item">
+            <li class="icon-container__item" id="growth">
               <svg class="side-icon">
                 <use xlink:href="img/svg/sprite.svg#diagram" />
               </svg>
             </li>
 
-            <li class="icon-container__item">
+            <li class="icon-container__item" id="moat">
               <svg class="side-icon">
                 <use
                   xlink:href="img/svg/sprite.svg#castle"
@@ -62,7 +62,7 @@
               </svg>
             </li>
 
-            <li class="icon-container__item">
+            <li class="icon-container__item" id="debt">
               <svg class="side-icon">
                 <use
                   xlink:href="img/svg/sprite.svg#debt"
@@ -106,7 +106,9 @@
           </div>
           <!--end of loading screen-->
           <!--start of charts-->
-          <div class="title-container"><h1 class="title">Growth</h1></div>
+          <div class="title-container" id="growth-title">
+            <h1 class="title">Growth</h1>
+          </div>
 
           <div class="chart-container growth">
             <div id="chartContainer" class="chart-container__charts"></div>
@@ -114,7 +116,9 @@
             <div id="chartContainer3" class="chart-container__charts"></div>
           </div>
 
-          <div class="title-container"><h1 class="title">Moat Metrics</h1></div>
+          <div class="title-container" id="moat-title">
+            <h1 class="title">Moat Metrics</h1>
+          </div>
           <div class="chart-container moat">
             <div id="chartContainer5" class="chart-container__charts"></div>
             <div id="chartContainer6" class="chart-container__charts"></div>
@@ -122,7 +126,9 @@
             <div id="chartContainer8" class="chart-container__charts"></div>
           </div>
 
-          <div class="title-container"><h1 class="title">Debt metrics</h1></div>
+          <div class="title-container" id="debt-title">
+            <h1 class="title">Debt metrics</h1>
+          </div>
           <div class="chart-container debt">
             <div id="chartContainer9" class="chart-container__charts"></div>
             <div id="chartContainer10" class="chart-container__charts"></div>
@@ -134,5 +140,6 @@
     </div>
     <script src="js/charts.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </body>
 </html>

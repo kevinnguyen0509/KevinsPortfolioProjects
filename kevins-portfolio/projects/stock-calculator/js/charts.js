@@ -6,6 +6,7 @@ window.onload = function () {
   let titles = document.querySelectorAll(".title-container");
   let chartContainer = document.querySelectorAll(".chart-container");
   let loading = document.querySelector(".loading");
+  let loadingOne = document.querySelector(".loading-one");
   let chartObject = {
     animationEnabled: true,
     theme: "light2", // "light1", "light2", "dark1", "dark2"
@@ -35,6 +36,30 @@ window.onload = function () {
       },
     ],
   };
+
+  /*Scrolling */
+
+  $(".logo-container__logo").click(function () {
+    $("html, body").animate({ scrollTop: $("html").offset().top }, 1000);
+  });
+
+  $("#home").click(function () {
+    $("html, body").animate({ scrollTop: $("html").offset().top }, 1000);
+  });
+
+  $("#growth").click(function () {
+    $("html, body").animate(
+      { scrollTop: $("#growth-title").offset().top },
+      1000
+    );
+  });
+
+  $("#moat").click(function () {
+    $("html, body").animate({ scrollTop: $("#moat-title").offset().top }, 900);
+  });
+  $("#debt").click(function () {
+    $("html, body").animate({ scrollTop: $("#debt-title").offset().top }, 800);
+  });
 
   function createDeepCopy(chartObject) {
     let createDeepCopyOfObject = JSON.parse(JSON.stringify(chartObject));
@@ -83,11 +108,11 @@ window.onload = function () {
 
   let changeTitle = () => {
     chart.options.title.text = "Revenue Growth: 10% + is good";
-    chart2.options.title.text = "Net income growth: 12% + is good";
-    chart3.options.title.text = "eps growth: 10% +";
-    chart5.options.title.text = "net income growth: 15% +";
-    chart6.options.title.text = "Cash/Sales ratio: 5% +";
-    chart7.options.title.text = "Return on assets ratio: 7% +";
+    chart2.options.title.text = "Net Income Growth: 12-15% + is good";
+    chart3.options.title.text = "EPS Growth: 10% +";
+    chart5.options.title.text = "Net Income Growth: 12-15% +";
+    chart6.options.title.text = "Cash/Sales Ratio: 5% +";
+    chart7.options.title.text = "Return on Assets Ratio: 7% +";
     chart8.options.title.text = "Return on Equity ratio: 15% +";
   };
 
@@ -105,25 +130,7 @@ window.onload = function () {
     chart10.render();
     chart11.render();
   };
-
-  setTimeout(function () {
-    allCharts.forEach((element) => {
-      element.classList.toggle("hidden");
-    });
-
-    titles.forEach((element) => {
-      element.classList.toggle("hidden");
-    });
-
-    //show tony the t-rex searching/loading
-    loading.classList.toggle("hidden");
-  }, 1);
-  searchBtn.addEventListener("click", () => {
-    //show tony the t-rex searching/loading
-
-    loading.classList.toggle("hidden");
-
-    //hide tony when search result is found
+  let hideGraphsAndTitles = () => {
     setTimeout(function () {
       allCharts.forEach((element) => {
         element.classList.toggle("hidden");
@@ -135,10 +142,44 @@ window.onload = function () {
 
       //show tony the t-rex searching/loading
       loading.classList.toggle("hidden");
-    }, 3000);
+    }, 1);
+  };
+
+  //clicking button
+  searchBtn.addEventListener("click", () => {
+    //hide landing page Tony
+    allCharts.forEach((element) => {
+      element.classList.add("hidden");
+    });
+
+    titles.forEach((element) => {
+      element.classList.add("hidden");
+    });
+    loadingOne.classList.add("hidden");
+    //show tony the t-rex searching/loading
+
+    loading.classList.toggle("hidden");
+
+    //hide tony when search result is found
+    setTimeout(function () {
+      if (allCharts[0].classList.contains("hidden")) {
+        allCharts.forEach((element) => {
+          element.classList.remove("hidden");
+        });
+
+        titles.forEach((element) => {
+          element.classList.remove("hidden");
+        });
+      }
+
+      //show tony the t-rex searching/loading
+
+      loading.classList.toggle("hidden");
+    }, 2000);
 
     //if not found then show animation for not found
   });
+  hideGraphsAndTitles();
   changeTitle();
   renderCharts();
 };
