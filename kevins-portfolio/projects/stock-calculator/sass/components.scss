@@ -101,41 +101,29 @@
 
 /***********Chart*****************/
 
-.chart-container {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1%;
-  margin: 3rem 0;
+.charts {
+  height: 360px;
+  flex-basis: 49%;
+  flex-grow: 1;
+  margin-right: 1%;
+  box-shadow: var(--box-shadow);
   position: relative;
-  &__charts {
-    height: 360px;
-    flex-basis: 49%;
-    margin-right: 1%;
-    margin-bottom: 1%;
-    box-shadow: var(--box-shadow);
-  }
-}
-
-.growth .chart-container__charts:first-child {
-  flex-basis: 100%;
-}
-
-.debt .chart-container__charts:first-child {
-  flex-basis: 100%;
 }
 
 .title-container {
   position: relative;
+  flex-basis: 100%;
   height: 2%;
 }
 .title {
-  margin-bottom: 3rem;
+  margin-bottom: 8rem;
 }
 .title::after {
   content: "";
   position: absolute;
   width: 10%;
   height: 5%;
+  top: 35;
   bottom: 0;
   left: 0;
   right: 0;

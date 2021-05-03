@@ -22,8 +22,6 @@ let chartNine;
 let chartTen;
 let chartEleven;
 
-//Moat Charts
-
 export const renderAllCharts = function (stockSymbol) {
   fetch(fetchIncomeStatementData(stockSymbol, apikey))
     .then((response) => {
@@ -43,6 +41,13 @@ export const renderAllCharts = function (stockSymbol) {
     .then((data) => data.json())
     .then((balanceSheetData) => {
       balanceSheetStatement = balanceSheetData; // stores balancesheet statement
+      //Create charts
+      //createCharts();
+      createCharts();
+      changeTitle(chart, "EPS Growth");
+      changeTitle(chartTwo, "Net Income Growth: 12-15%+");
+      changeTitle(chartThree, "Revenue Growth: 10-30%+");
+      renderCharts();
 
       //Statements: Comment out after
       console.log(incomeStatement);
@@ -99,3 +104,84 @@ function fetchCashflowStatementData(stockSymbol, apikey) {
 function fetchBalancesheetData(stockSymbol, apikey) {
   return `https://financialmodelingprep.com/api/v3/balance-sheet-statement/${stockSymbol.toUpperCase()}?limit=10&apikey=${apikey}`;
 }
+
+/***********Revenue Chart*************/
+
+function createCharts() {
+  chart = new CanvasJS.Chart("chartContainer", createDeepCopy(chartObject));
+  chartTwo = new CanvasJS.Chart("chartContainer2", createDeepCopy(chartObject));
+  chartThree = new CanvasJS.Chart(
+    "chartContainer3",
+    createDeepCopy(chartObject)
+  );
+
+  chartFive = new CanvasJS.Chart(
+    "chartContainer5",
+    createDeepCopy(chartObject)
+  );
+  chartSix = new CanvasJS.Chart("chartContainer6", createDeepCopy(chartObject));
+  chartSeven = new CanvasJS.Chart(
+    "chartContainer7",
+    createDeepCopy(chartObject)
+  );
+  chartEight = new CanvasJS.Chart(
+    "chartContainer8",
+    createDeepCopy(chartObject)
+  );
+
+  chartNine = new CanvasJS.Chart(
+    "chartContainer9",
+    createDeepCopy(chartObject)
+  );
+  chartTen = new CanvasJS.Chart(
+    "chartContainer10",
+    createDeepCopy(chartObject)
+  );
+  chartEleven = new CanvasJS.Chart(
+    "chartContainer11",
+    createDeepCopy(chartObject)
+  );
+}
+
+function renderCharts() {
+  chart.render();
+  chartTwo.render();
+  chartThree.render();
+
+  chartFive.render();
+  chartSix.render();
+  chartSeven.render();
+  chartEight.render();
+
+  chartNine.render();
+  chartTen.render();
+  chartEleven.render();
+}
+
+function calculateGrowth(originalNumber, newNumber) {
+  return ((newNumber - originalNumber) / originalNumber) * 100;
+}
+
+function changeTitle(chart, newChartTitle) {
+  chart.options.title.text = newChartTitle;
+}
+
+/*
+
+//Growth Charts
+let chart;
+let chartTwo;
+let chartThree;
+
+//Moat charts
+let chartFive;
+let chartSix;
+let chartSeven;
+let chartEight;
+
+//debt metrics
+let chartNine;
+let chartTen;
+let chartEleven;
+
+*/

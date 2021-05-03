@@ -64,7 +64,7 @@ function createDeepCopy(chartObject) {
   return createDeepCopyOfObject;
 }
 
-let chart = new CanvasJS.Chart("chartContainer", createDeepCopy(chartObject));
+// let chart = new CanvasJS.Chart("chartContainer", createDeepCopy(chartObject));
 let chart2 = new CanvasJS.Chart("chartContainer2", createDeepCopy(chartObject));
 let chart3 = new CanvasJS.Chart("chartContainer3", createDeepCopy(chartObject));
 
@@ -83,43 +83,23 @@ let chart11 = new CanvasJS.Chart(
   createDeepCopy(chartObject)
 );
 
+let renderCharts = () => {};
+
 let changeTitle = () => {
-  chart.options.title.text = "Revenue Growth: 10% + is good";
-  chart2.options.title.text = "Net Income Growth: 12-15% + is good";
+  //chart.options.title.text = "Revenue Growth: 10% + is good";
+  chart2.options.title.text = "Net Incasdfsfdome Growth: 12-15% + is good";
   chart3.options.title.text = "EPS Growth: 10% +";
   chart5.options.title.text = "Net Income Growth: 12-15% +";
   chart6.options.title.text = "Cash/Sales Ratio: 5% +";
   chart7.options.title.text = "Return on Assets Ratio: 7% +";
   chart8.options.title.text = "Return on Equity ratio: 15% +";
-};
-
-let renderCharts = () => {
-  chart2.render();
-  chart.render();
-  chart3.render();
-
-  chart5.render();
-  chart6.render();
-  chart7.render();
-  chart8.render();
-
-  chart9.render();
-  chart10.render();
-  chart11.render();
+  //renderAllCharts("goog");
 };
 let hideGraphsAndTitles = () => {
   setTimeout(function () {
-    allCharts.forEach((element) => {
-      element.classList.toggle("hidden");
-    });
-
-    titles.forEach((element) => {
-      element.classList.toggle("hidden");
-    });
-
     //show tony the t-rex searching/loading
-    loading.classList.toggle("hidden");
-  }, 1);
+    loading.classList.add("hidden");
+  }, 100);
 };
 
 //clicking button
@@ -139,23 +119,23 @@ searchBtn.addEventListener("click", () => {
     loadingOne.classList.add("hidden");
     //show tony the t-rex searching/loading
 
-    loading.classList.toggle("hidden");
+    loading.classList.add("hidden");
 
     //hide tony when search result is found
     setTimeout(function () {
       if (allCharts[0].classList.contains("hidden")) {
         allCharts.forEach((element) => {
-          element.classList.remove("hidden");
+          element.classList.add("hidden");
         });
 
         titles.forEach((element) => {
-          element.classList.remove("hidden");
+          element.classList.add("hidden");
         });
       }
 
       //show tony the t-rex searching/loading
 
-      loading.classList.toggle("hidden");
+      loading.classList.add("hidden");
     }, 2000);
   }
 
@@ -180,7 +160,7 @@ searchBox.addEventListener("keyup", (e) => {
       loadingOne.classList.add("hidden");
       //show tony the t-rex searching/loading
 
-      loading.classList.toggle("hidden");
+      loading.classList.add("hidden");
 
       //hide tony when search result is found
       setTimeout(function () {
@@ -196,7 +176,7 @@ searchBox.addEventListener("keyup", (e) => {
 
         //show tony the t-rex searching/loading
 
-        loading.classList.toggle("hidden");
+        loading.classList.add("hidden");
       }, 2000);
     }
 
@@ -204,8 +184,7 @@ searchBox.addEventListener("keyup", (e) => {
   }
 });
 
-renderAllCharts("intc");
-
 hideGraphsAndTitles();
 changeTitle();
-renderCharts();
+renderAllCharts("Intc");
+//renderCharts();
