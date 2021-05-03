@@ -38,4 +38,6 @@ export function showStartScreen() {
 
 export function showLoadingScreen() {
   loading.classList.remove("hidden");
+  charts.forEach((chart) => (chart.style.visibility = "hidden"));
+  rightSide.style.height = "100%";
 }

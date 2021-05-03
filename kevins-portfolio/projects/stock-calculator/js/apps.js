@@ -17,6 +17,7 @@ PageComponents.hideTitles();
 //clicking button
 searchBtn.addEventListener("click", () => {
   PageComponents.hideStartScreen();
+  PageComponents.hideTitles();
   PageComponents.showLoadingScreen();
   let searchBoxValue = searchBox.value.trim();
   if (!searchBoxValue) {
@@ -31,6 +32,7 @@ searchBtn.addEventListener("click", () => {
 searchBox.addEventListener("keyup", (e) => {
   if (e.key == "Enter" || e.keyCode === 13) {
     PageComponents.hideStartScreen();
+    PageComponents.hideTitles();
     PageComponents.showLoadingScreen();
     let searchBoxValue = searchBox.value.trim();
     if (!searchBoxValue) {
