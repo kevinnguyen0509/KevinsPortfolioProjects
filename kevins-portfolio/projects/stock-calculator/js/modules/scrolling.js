@@ -21,7 +21,3 @@ export function createScrollingFeature() {
     $("html, body").animate({ scrollTop: $("#debt-title").offset().top }, 800);
   });
 }
-
-export function hideLoadingScreen() {
-  loading.classList.add("hidden");
-}
