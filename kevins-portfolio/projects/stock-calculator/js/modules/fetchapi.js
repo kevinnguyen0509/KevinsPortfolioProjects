@@ -1,3 +1,4 @@
+import * as PageComponents from "./components.js";
 //api
 let apikey = "8793a5dd98d50075b3ed2d6ef0f66b4d";
 
@@ -23,6 +24,7 @@ let chartTen;
 let chartEleven;
 
 export const renderAllCharts = function (stockSymbol) {
+  createCharts();
   fetch(fetchIncomeStatementData(stockSymbol, apikey))
     .then((response) => {
       return response.json();
@@ -41,18 +43,24 @@ export const renderAllCharts = function (stockSymbol) {
     .then((data) => data.json())
     .then((balanceSheetData) => {
       balanceSheetStatement = balanceSheetData; // stores balancesheet statement
-      //Create charts
-      //createCharts();
-      createCharts();
-      changeTitle(chart, "EPS Growth");
-      changeTitle(chartTwo, "Net Income Growth: 12-15%+");
-      changeTitle(chartThree, "Revenue Growth: 10-30%+");
-      renderCharts();
 
       //Statements: Comment out after
       console.log(incomeStatement);
       console.log(balanceSheetStatement);
       console.log(cashFlowStatement);
+    })
+    .catch((err) => {
+      PageComponents.hideLoadingScreen();
+      console.error(`${err} 💥`);
+      renderError(`Something went wrong: ${err.message}`);
+    })
+    .finally(() => {
+      renderTitles();
+      renderCharts();
+
+      PageComponents.hideLoadingScreen();
+      PageComponents.showTitles();
+      PageComponents.showCharts();
     });
 };
 
@@ -107,7 +115,7 @@ function fetchBalancesheetData(stockSymbol, apikey) {
 
 /***********Revenue Chart*************/
 
-function createCharts() {
+export function createCharts() {
   chart = new CanvasJS.Chart("chartContainer", createDeepCopy(chartObject));
   chartTwo = new CanvasJS.Chart("chartContainer2", createDeepCopy(chartObject));
   chartThree = new CanvasJS.Chart(
@@ -143,7 +151,22 @@ function createCharts() {
   );
 }
 
-function renderCharts() {
+function renderTitles() {
+  changeChartTitle(chart, "EPS Growth");
+  changeChartTitle(chartTwo, "Net Income Growth");
+  changeChartTitle(chartThree, "Revenue Growth: 10-30%+");
+
+  changeChartTitle(chartFive, "Cashflow to Sales: 5%+");
+  changeChartTitle(chartSix, "Net Income Growth: 12-15%+");
+  changeChartTitle(chartSeven, "Return on Assets: 7-8%+");
+  changeChartTitle(chartEight, "Return on equity: 12-15%+");
+
+  changeChartTitle(chartNine, "Current Ratio: 1.2 - 2");
+  changeChartTitle(chartTen, "finacial Leverage: > 4");
+  changeChartTitle(chartEleven, "Interest Coverage: 2+");
+}
+
+export function renderCharts() {
   chart.render();
   chartTwo.render();
   chartThree.render();
@@ -162,7 +185,7 @@ function calculateGrowth(originalNumber, newNumber) {
   return ((newNumber - originalNumber) / originalNumber) * 100;
 }
 
-function changeTitle(chart, newChartTitle) {
+function changeChartTitle(chart, newChartTitle) {
   chart.options.title.text = newChartTitle;
 }
 
