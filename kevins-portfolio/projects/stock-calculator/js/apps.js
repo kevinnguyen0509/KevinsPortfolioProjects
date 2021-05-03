@@ -16,14 +16,12 @@ PageComponents.hideTitles();
 
 //clicking button
 searchBtn.addEventListener("click", () => {
-  PageComponents.hideStartScreen();
-  PageComponents.hideTitles();
-  PageComponents.showLoadingScreen();
   let searchBoxValue = searchBox.value.trim();
   if (!searchBoxValue) {
     //Create redborder around inputbox
     console.log("do nothing");
   } else {
+    PageComponents.startLoadingAll();
     renderAllCharts(searchBoxValue);
   }
 });
@@ -31,13 +29,11 @@ searchBtn.addEventListener("click", () => {
 //clicking button
 searchBox.addEventListener("keyup", (e) => {
   if (e.key == "Enter" || e.keyCode === 13) {
-    PageComponents.hideStartScreen();
-    PageComponents.hideTitles();
-    PageComponents.showLoadingScreen();
     let searchBoxValue = searchBox.value.trim();
     if (!searchBoxValue) {
       console.log("do nothing");
     } else {
+      PageComponents.startLoadingAll();
       renderAllCharts(searchBoxValue);
     }
   }

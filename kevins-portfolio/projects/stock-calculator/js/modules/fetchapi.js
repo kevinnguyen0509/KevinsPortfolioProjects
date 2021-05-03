@@ -50,7 +50,7 @@ export const renderAllCharts = function (stockSymbol) {
       console.log(cashFlowStatement);
     })
     .catch((err) => {
-      PageComponents.hideLoadingScreen();
+      PageComponents.hideLoadingAll();
       console.error(`${err} 💥`);
       renderError(`Something went wrong: ${err.message}`);
     })
@@ -58,7 +58,7 @@ export const renderAllCharts = function (stockSymbol) {
       renderTitles();
       renderCharts();
 
-      PageComponents.hideLoadingScreen();
+      PageComponents.hideLoadingAll();
       PageComponents.showTitles();
       PageComponents.showCharts();
     });
@@ -81,7 +81,7 @@ const chartObject = {
       type: "column",
       showInLegend: true,
       legendMarkerColor: "grey",
-      legendText: "Measures growth over the years",
+      legendText: "Measures Annual growth",
       dataPoints: [
         { y: 300684, label: "Venezuela" },
         { y: 266455, label: "Saudi" },
