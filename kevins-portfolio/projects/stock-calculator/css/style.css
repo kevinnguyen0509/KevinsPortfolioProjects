@@ -63,14 +63,12 @@ body {
   background-image: linear-gradient(to right bottom, var(--color-purple-1), var(--color-purple-2), var(--color-purple-3));
   display: flex;
   position: relative;
-  padding-right: 0.75rem;
-  padding-left: 1.2rem;
+  padding: 5rem 2rem 0 2rem;
   flex-wrap: wrap;
   height: 100%;
   flex-grow: 1;
   justify-content: center;
-  text-align: center;
-  padding-top: 5rem; }
+  text-align: center; }
 
 /***********Right Side*****************/
 .start-icon {
