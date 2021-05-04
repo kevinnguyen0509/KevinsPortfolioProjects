@@ -39,7 +39,9 @@ let returnOnEquityArray = [];
 
 //debt metrics
 let currentRatioArray = [];
+let ebitArray = [];
 let interestCoverageRatioArray = [];
+let equityMultiplierArray = [];
 
 export const renderAllCharts = function (stockSymbol) {
   createCharts();
@@ -53,6 +55,8 @@ export const renderAllCharts = function (stockSymbol) {
       storeGrowth(incomeStatement, revenueGrowthArray, "revenue");
       storeGrowth(incomeStatement, netIncomeGrowthArray, "netIncome");
       storeGrowth(incomeStatement, epsGrowthArray, "eps");
+      storeEbitArray(incomeStatement);
+      storeInterestCoverageRatio(ebitArray, incomeStatement);
       storeMoatMetricInArray(
         incomeStatement,
         "revenue",
@@ -80,6 +84,7 @@ export const renderAllCharts = function (stockSymbol) {
     .then((balanceSheetData) => {
       balanceSheetStatement = balanceSheetData; // stores balancesheet statement
 
+      storeEquityMultiplier(balanceSheetStatement, equityMultiplierArray);
       storeMoatMetricInArray(
         balanceSheetStatement,
         "totalAssets",
@@ -102,14 +107,6 @@ export const renderAllCharts = function (stockSymbol) {
         balanceSheetStatement,
         currentRatioArray,
         "totalCurrentAssets"
-      );
-
-      storeDebtMetricInArray(
-        incomeStatement,
-        "interestExpense",
-        incomeStatement,
-        interestCoverageRatioArray,
-        "operatingIncome"
       );
 
       //Statements: Comment out after
@@ -184,10 +181,19 @@ export const renderAllCharts = function (stockSymbol) {
         chartNine
       );
       newDataPoint = [];
+
+      replaceDatapointForCharts(
+        newDataPoint,
+        equityMultiplierArray,
+        incomeStatement,
+        chartTen
+      );
+      newDataPoint = [];
+
       replaceDatapointForCharts(
         newDataPoint,
         interestCoverageRatioArray,
-        incomeStatement,
+        balanceSheetStatement,
         chartEleven
       );
       newDataPoint = [];
@@ -269,6 +275,8 @@ function replaceDatapointForCharts(
     newDataPoint.push({ y: array[i], label: statementArray[i].date });
   }
   currentChart.options.data[0].dataPoints = newDataPoint.reverse();
+
+  console.log(interestCoverageRatioArray.length);
 }
 
 function calculateGrowth(originalNumber, newNumber) {
@@ -294,11 +302,6 @@ function storeMoatMetricInArray(
     );
   }
 }
-function calculateMoatMetric(incomeStatement, financialStatementTwoNumber) {
-  return parseFloat(
-    ((financialStatementTwoNumber / incomeStatement) * 100).toFixed(2)
-  );
-}
 
 function storeDebtMetricInArray(
   incomeStatement,
@@ -317,10 +320,68 @@ function storeDebtMetricInArray(
     );
   }
 }
+function storeEbitArray(incomeStatement) {
+  for (let i = 0; i < incomeStatement.length; i++) {
+    ebitArray.push(
+      calculateEbit(
+        incomeStatement[i].netIncome,
+        incomeStatement[i].incomeTaxExpense,
+        incomeStatement[i].interestExpense
+      )
+    );
+  }
+}
+
+function storeInterestCoverageRatio(ebitArray, incomeStatement) {
+  for (let i = 0; i < ebitArray.length; i++) {
+    interestCoverageRatioArray.push(
+      calculateDivideTwoNumbers(
+        ebitArray[i],
+        incomeStatement[i].interestExpense
+      )
+    );
+  }
+}
+
+//create
+//totalAssetst/totalShareholdersEquity
+
+function storeEquityMultiplier(balancesheet, equityMultiplierArray) {
+  for (let i = 0; i < balancesheet.length; i++) {
+    equityMultiplierArray.push(
+      calculateDivideTwoNumbers(
+        balancesheet[i].totalAssets,
+        balancesheet[i].totalStockholdersEquity
+      )
+    );
+  }
+  console.log("EMA");
+  console.log(equityMultiplierArray);
+}
+
+function calculateDivideTwoNumbers(numerator, denominator) {
+  return parseFloat((numerator / denominator).toFixed(2));
+}
+//netincome + incomeTaxExpense + interestExpense = ebit
+//Ebit/interestExpense
 
 function calculateDebtMetric(incomeStatement, financialStatementTwoNumber) {
   return parseFloat((financialStatementTwoNumber / incomeStatement).toFixed(2));
 }
+
+/*************calculations******************************** */
+function calculateEbit(netincome, incomeTaxExpense, interestExpense) {
+  return parseFloat(
+    (netincome + incomeTaxExpense + interestExpense).toFixed(2)
+  );
+}
+
+function calculateMoatMetric(incomeStatement, financialStatementTwoNumber) {
+  return parseFloat(
+    ((financialStatementTwoNumber / incomeStatement) * 100).toFixed(2)
+  );
+}
+
 function clearAllGrowthArray() {
   revenueGrowthArray = [];
   netIncomeGrowthArray = [];
@@ -330,7 +391,9 @@ function clearAllGrowthArray() {
   returnOnAssets = [];
   returnOnEquityArray = [];
   currentRatioArray = [];
+  ebitArray = [];
   interestCoverageRatioArray = [];
+  equityMultiplierArray = [];
 }
 /***********Chart*************/
 
@@ -381,7 +444,10 @@ function renderTitles() {
   changeChartTitle(chartEight, "Return on equity: 12-15%+");
 
   changeChartTitle(chartNine, "Current Ratio: 1.2 - 2");
-  changeChartTitle(chartTen, "finacial Leverage: > 4");
+  changeChartTitle(
+    chartTen,
+    "Equity Multiplier:(compare with other companies)"
+  );
   changeChartTitle(chartEleven, "Interest Coverage: 2+");
 }
 
