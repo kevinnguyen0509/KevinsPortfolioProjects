@@ -198,12 +198,8 @@ export const renderAllCharts = function (stockSymbol) {
       );
       newDataPoint = [];
 
-      console.log("bal");
-
       renderTitles();
       renderCharts();
-
-      //console.log(revenueGrowthArray);
 
       clearAllGrowthArray();
 
@@ -275,8 +271,6 @@ function replaceDatapointForCharts(
     newDataPoint.push({ y: array[i], label: statementArray[i].date });
   }
   currentChart.options.data[0].dataPoints = newDataPoint.reverse();
-
-  console.log(interestCoverageRatioArray.length);
 }
 
 function calculateGrowth(originalNumber, newNumber) {
