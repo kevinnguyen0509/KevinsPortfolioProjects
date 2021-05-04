@@ -1,6 +1,8 @@
 import * as PageComponents from "./components.js";
 //api
-let apikey = "7208a8f188376ca532027e8143ecce9a";
+//28c1b1a5d13224c0631e01c01dd92c2c
+//7208a8f188376ca532027e8143ecce9a
+let apikey = "28c1b1a5d13224c0631e01c01dd92c2c";
 
 //Financial statements
 let incomeStatement;
@@ -34,6 +36,10 @@ let cashToSalesRatioArray = [];
 let netMarginArray = [];
 let returnOnAssets = [];
 let returnOnEquityArray = [];
+
+//debt metrics
+let currentRatioArray = [];
+let interestCoverageRatioArray = [];
 
 export const renderAllCharts = function (stockSymbol) {
   createCharts();
@@ -88,6 +94,22 @@ export const renderAllCharts = function (stockSymbol) {
         incomeStatement,
         returnOnEquityArray,
         "netIncome"
+      );
+
+      storeDebtMetricInArray(
+        balanceSheetStatement,
+        "totalCurrentLiabilities",
+        balanceSheetStatement,
+        currentRatioArray,
+        "totalCurrentAssets"
+      );
+
+      storeDebtMetricInArray(
+        incomeStatement,
+        "interestExpense",
+        incomeStatement,
+        interestCoverageRatioArray,
+        "operatingIncome"
       );
 
       //Statements: Comment out after
@@ -155,9 +177,22 @@ export const renderAllCharts = function (stockSymbol) {
       );
       newDataPoint = [];
 
-      console.log("bal");
+      replaceDatapointForCharts(
+        newDataPoint,
+        currentRatioArray,
+        balanceSheetStatement,
+        chartNine
+      );
+      newDataPoint = [];
+      replaceDatapointForCharts(
+        newDataPoint,
+        interestCoverageRatioArray,
+        incomeStatement,
+        chartEleven
+      );
+      newDataPoint = [];
 
-      console.log(returnOnAssets);
+      console.log("bal");
 
       renderTitles();
       renderCharts();
@@ -264,6 +299,28 @@ function calculateMoatMetric(incomeStatement, financialStatementTwoNumber) {
     ((financialStatementTwoNumber / incomeStatement) * 100).toFixed(2)
   );
 }
+
+function storeDebtMetricInArray(
+  incomeStatement,
+  incomeStatementLineItem,
+  financialStatementTwo,
+  moatArray,
+  lineItem
+) {
+  for (let i = 0; i < incomeStatement.length; i++) {
+    moatArray.push(
+      calculateDebtMetric(
+        incomeStatement[i][incomeStatementLineItem],
+        financialStatementTwo[i][lineItem],
+        lineItem
+      )
+    );
+  }
+}
+
+function calculateDebtMetric(incomeStatement, financialStatementTwoNumber) {
+  return parseFloat((financialStatementTwoNumber / incomeStatement).toFixed(2));
+}
 function clearAllGrowthArray() {
   revenueGrowthArray = [];
   netIncomeGrowthArray = [];
@@ -272,6 +329,8 @@ function clearAllGrowthArray() {
   netMarginArray = [];
   returnOnAssets = [];
   returnOnEquityArray = [];
+  currentRatioArray = [];
+  interestCoverageRatioArray = [];
 }
 /***********Chart*************/
 
