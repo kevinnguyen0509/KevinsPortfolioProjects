@@ -87,9 +87,14 @@ body {
   fill: var(--color-teal-1);
   transition: all 0.5s; }
 
-.loading-one__start-icon-loading {
-  fill: var(--color-teal-1);
-  animation: slowdance 3s infinite; }
+.loading {
+  position: fixed; }
+
+.loading-one {
+  position: fixed; }
+  .loading-one__start-icon-loading {
+    fill: var(--color-teal-1);
+    animation: slowdance 3s infinite; }
 
 .side-icon:hover {
   fill: var(--color-sky-blue);

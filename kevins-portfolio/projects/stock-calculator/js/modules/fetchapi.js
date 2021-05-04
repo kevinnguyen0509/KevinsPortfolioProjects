@@ -1,6 +1,6 @@
 import * as PageComponents from "./components.js";
 //api
-let apikey = "8793a5dd98d50075b3ed2d6ef0f66b4d";
+let apikey = "7208a8f188376ca532027e8143ecce9a";
 
 //Financial statements
 let incomeStatement;
@@ -23,6 +23,18 @@ let chartNine;
 let chartTen;
 let chartEleven;
 
+//Growth Arrays
+let newDataPoint = [];
+let revenueGrowthArray = [];
+let netIncomeGrowthArray = [];
+let epsGrowthArray = [];
+
+//moat
+let cashToSalesRatioArray = [];
+let netMarginArray = [];
+let returnOnAssets = [];
+let returnOnEquityArray = [];
+
 export const renderAllCharts = function (stockSymbol) {
   createCharts();
   fetch(fetchIncomeStatementData(stockSymbol, apikey))
@@ -32,17 +44,51 @@ export const renderAllCharts = function (stockSymbol) {
     .then((data) => {
       incomeStatement = data; //Stores income statement
 
+      storeGrowth(incomeStatement, revenueGrowthArray, "revenue");
+      storeGrowth(incomeStatement, netIncomeGrowthArray, "netIncome");
+      storeGrowth(incomeStatement, epsGrowthArray, "eps");
+      storeMoatMetricInArray(
+        incomeStatement,
+        "revenue",
+        incomeStatement,
+        netMarginArray,
+        "netIncome"
+      );
+
       return fetch(fetchCashflowStatementData(stockSymbol, apikey));
     })
     .then((response) => response.json())
     .then((cashFlowData) => {
       cashFlowStatement = cashFlowData; //Stores cashflow statement
 
+      storeMoatMetricInArray(
+        incomeStatement,
+        "revenue",
+        cashFlowStatement,
+        cashToSalesRatioArray,
+        "freeCashFlow"
+      );
       return fetch(fetchBalancesheetData(stockSymbol, apikey));
     })
     .then((data) => data.json())
     .then((balanceSheetData) => {
       balanceSheetStatement = balanceSheetData; // stores balancesheet statement
+
+      storeMoatMetricInArray(
+        balanceSheetStatement,
+        "totalAssets",
+        incomeStatement,
+        returnOnAssets,
+        "netIncome"
+      );
+
+      storeMoatMetricInArray(
+        balanceSheetStatement,
+        "totalStockholdersEquity",
+        incomeStatement,
+        returnOnEquityArray,
+        "netIncome"
+      );
 
       //Statements: Comment out after
       console.log(incomeStatement);
@@ -52,11 +98,73 @@ export const renderAllCharts = function (stockSymbol) {
     .catch((err) => {
       PageComponents.hideLoadingAll();
       console.error(`${err} 💥`);
-      renderError(`Something went wrong: ${err.message}`);
     })
     .finally(() => {
+      replaceDatapointForCharts(
+        newDataPoint,
+        revenueGrowthArray,
+        incomeStatement,
+        chartThree
+      );
+      newDataPoint = [];
+      replaceDatapointForCharts(
+        newDataPoint,
+        netIncomeGrowthArray,
+        incomeStatement,
+        chartTwo
+      );
+      newDataPoint = [];
+
+      replaceDatapointForCharts(
+        newDataPoint,
+        epsGrowthArray,
+        incomeStatement,
+        chart
+      );
+      newDataPoint = [];
+
+      replaceDatapointForCharts(
+        newDataPoint,
+        cashToSalesRatioArray,
+        incomeStatement,
+        chartFive
+      );
+      newDataPoint = [];
+
+      replaceDatapointForCharts(
+        newDataPoint,
+        netMarginArray,
+        incomeStatement,
+        chartSix
+      );
+      newDataPoint = [];
+
+      replaceDatapointForCharts(
+        newDataPoint,
+        returnOnAssets,
+        balanceSheetStatement,
+        chartSeven
+      );
+      newDataPoint = [];
+
+      replaceDatapointForCharts(
+        newDataPoint,
+        returnOnEquityArray,
+        balanceSheetStatement,
+        chartEight
+      );
+      newDataPoint = [];
+
+      console.log("bal");
+
+      console.log(returnOnAssets);
+
       renderTitles();
       renderCharts();
+
+      //console.log(revenueGrowthArray);
+
+      clearAllGrowthArray();
 
       PageComponents.hideLoadingAll();
       PageComponents.showTitles();
@@ -82,16 +190,7 @@ const chartObject = {
       showInLegend: true,
       legendMarkerColor: "grey",
       legendText: "Measures Annual growth",
-      dataPoints: [
-        { y: 300684, label: "Venezuela" },
-        { y: 266455, label: "Saudi" },
-        { y: 169709, label: "Canada" },
-        { y: 158400, label: "Iran" },
-        { y: 142503, label: "Iraq" },
-        { y: 101500, label: "Kuwait" },
-        { y: 97800, label: "UAE" },
-        { y: 80000, label: "Russia" },
-      ],
+      dataPoints: [],
     },
   ],
 };
@@ -113,7 +212,68 @@ function fetchBalancesheetData(stockSymbol, apikey) {
   return `https://financialmodelingprep.com/api/v3/balance-sheet-statement/${stockSymbol.toUpperCase()}?limit=10&apikey=${apikey}`;
 }
 
-/***********Revenue Chart*************/
+/***********ARRAYS*************/
+function storeGrowth(incomeStatement, growthArray, lineItem) {
+  for (let i = 0; i < incomeStatement.length - 1; i++) {
+    growthArray.push(
+      calculateGrowth(
+        incomeStatement[i + 1][lineItem],
+        incomeStatement[i][lineItem]
+      )
+    );
+  }
+}
+
+function replaceDatapointForCharts(
+  newDataPoint,
+  array,
+  statementArray,
+  currentChart
+) {
+  for (let i = 0; i < array.length; i++) {
+    newDataPoint.push({ y: array[i], label: statementArray[i].date });
+  }
+  currentChart.options.data[0].dataPoints = newDataPoint.reverse();
+}
+
+function calculateGrowth(originalNumber, newNumber) {
+  return parseFloat(
+    (((newNumber - originalNumber) / originalNumber) * 100).toFixed(2)
+  );
+}
+
+function storeMoatMetricInArray(
+  incomeStatement,
+  incomeStatementLineItem,
+  financialStatementTwo,
+  moatArray,
+  lineItem
+) {
+  for (let i = 0; i < incomeStatement.length; i++) {
+    moatArray.push(
+      calculateMoatMetric(
+        incomeStatement[i][incomeStatementLineItem],
+        financialStatementTwo[i][lineItem],
+        lineItem
+      )
+    );
+  }
+}
+function calculateMoatMetric(incomeStatement, financialStatementTwoNumber) {
+  return parseFloat(
+    ((financialStatementTwoNumber / incomeStatement) * 100).toFixed(2)
+  );
+}
+function clearAllGrowthArray() {
+  revenueGrowthArray = [];
+  netIncomeGrowthArray = [];
+  epsGrowthArray = [];
+  cashToSalesRatioArray = [];
+  netMarginArray = [];
+  returnOnAssets = [];
+  returnOnEquityArray = [];
+}
+/***********Chart*************/
 
 export function createCharts() {
   chart = new CanvasJS.Chart("chartContainer", createDeepCopy(chartObject));
@@ -152,12 +312,12 @@ export function createCharts() {
 }
 
 function renderTitles() {
-  changeChartTitle(chart, "EPS Growth");
+  changeChartTitle(chart, "EPS Growth (Diluted)");
   changeChartTitle(chartTwo, "Net Income Growth");
-  changeChartTitle(chartThree, "Revenue Growth: 10-30%+");
+  changeChartTitle(chartThree, "Revenue Growth: 15-30%+");
 
   changeChartTitle(chartFive, "Cashflow to Sales: 5%+");
-  changeChartTitle(chartSix, "Net Income Growth: 12-15%+");
+  changeChartTitle(chartSix, "Net Margins: 12-15%+");
   changeChartTitle(chartSeven, "Return on Assets: 7-8%+");
   changeChartTitle(chartEight, "Return on equity: 12-15%+");
 
@@ -181,30 +341,6 @@ export function renderCharts() {
   chartEleven.render();
 }
 
-function calculateGrowth(originalNumber, newNumber) {
-  return ((newNumber - originalNumber) / originalNumber) * 100;
-}
-
 function changeChartTitle(chart, newChartTitle) {
   chart.options.title.text = newChartTitle;
 }
-
-/*
-
-//Growth Charts
-let chart;
-let chartTwo;
-let chartThree;
-
-//Moat charts
-let chartFive;
-let chartSix;
-let chartSeven;
-let chartEight;
-
-//debt metrics
-let chartNine;
-let chartTen;
-let chartEleven;
-
-*/

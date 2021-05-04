@@ -18,7 +18,11 @@
   fill: var(--color-teal-1);
   transition: all 0.5s;
 }
+.loading {
+  position: fixed;
+}
 .loading-one {
+  position: fixed;
   &__start-icon-loading {
     fill: var(--color-teal-1);
     animation: slowdance 3s infinite;
