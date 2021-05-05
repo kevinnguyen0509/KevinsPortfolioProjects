@@ -8,6 +8,12 @@
   --box-shadow: 0 0 5px 1px #719ece;
   --color-sky-blue: #719ece;
 }
+
+$large-screen: 1400px; //1100px
+$medium-screen: 710px; //900px
+$small-screen: 665px; //614px
+$phone-screen: 500px;
+
 *,
 html,
 body {

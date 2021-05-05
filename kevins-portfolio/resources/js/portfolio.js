@@ -73,6 +73,25 @@ const porfolioInfoArray = [
     github_url:
       "https://github.com/kevinnguyen0509/KevinsPortfolioProjects/tree/master/Realworldresponsiveweb/Omnifood",
   },
+
+  {
+    img: "resources/img/portfolio/stockCalc.PNG",
+    title: "Stock Calculator",
+    desciption:
+      "This website uses the financial prep API to pull back financial statements of a compnay. The data is used to see if a stock is worth looking at",
+    portfolio_url: "projects/stock-calculator/index.html",
+    github_url:
+      "https://github.com/kevinnguyen0509/KevinsPortfolioProjects/tree/master/kevins-portfolio/projects/stock-calculator",
+  },
+  {
+    img: "resources/img/portfolio/trillio.PNG",
+    title: "Stock Calculator",
+    desciption:
+      "This website is to demostrate a static website that is built for asthetic design and small amounts of animation in ccs. It's to practice my understanding of Flexbox and SCSS/SASS",
+    portfolio_url: "projects/tillio/index.html",
+    github_url:
+      "https://github.com/kevinnguyen0509/KevinsPortfolioProjects/tree/master/Realworldresponsiveweb/advanced-css-course-master/Trillo/starter",
+  },
 ];
 
 //functions
@@ -161,6 +180,14 @@ for (let i = 0; i < clickedOnImageArray.length; i++) {
         break;
       case 5:
         openModalClicked(5);
+        break;
+
+      case 6:
+        openModalClicked(6);
+        break;
+
+      case 7:
+        openModalClicked(7);
         break;
     }
   });

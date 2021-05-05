@@ -3,6 +3,7 @@ export function createScrollingFeature() {
     $("html, body").animate({ scrollTop: $("html").offset().top }, 1000);
   });
 
+  //Controls where each side button scrolls to
   $("#home").click(function () {
     $("html, body").animate({ scrollTop: $("html").offset().top }, 1000);
   });
