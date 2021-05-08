@@ -1,19 +1,27 @@
 const fs = require('fs');
 const express = require('express');
+const morgan = require('morgan');
 
-const app = express();
+const app = express(); //handles routing
 
+app.use(morgan('dev'));
 app.use(express.json());
 
-app.use((req, res, next) => {});
+app.use((req, res, next) => {
+  req.requestTime = new Date().toISOString();
+  next();
+});
 
 const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
 );
 
 const getAllTours = (req, res) => {
+  console.log(req.requestTime);
+
   res.status(200).json({
     status: 'Success',
+    requestedAt: req.requestTime,
     results: tours.length,
     data: {
       tours: tours
@@ -96,12 +104,41 @@ const deleteTour = (req, resp) => {
     data: null
   });
 };
+////////////////////////User Routes////////////////////////////////////////
+const getAllUsers = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet define'
+  });
+};
 
-// app.get('/api/v1/tours', getAllTours);
-// app.post('/api/v1/tours', createTour);
-// app.get('/api/v1/tours/:id', getTour);
-// app.patch('/api/v1/tours/:id', updateTour);
-// app.delete('/api/v1/tours/:id', deleteTour);
+const getUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet define'
+  });
+};
+
+const createUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet define'
+  });
+};
+
+const updateUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet define'
+  });
+};
+
+const deleteUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet define'
+  });
+};
 
 app
   .route('/api/v1/tours')
@@ -113,6 +150,17 @@ app
   .get(getTour)
   .patch(updateTour)
   .delete(deleteTour);
+//user Routes
+app
+  .route('/api/v1/users')
+  .get(getAllUsers)
+  .post(createUser);
+
+app
+  .route('/api/v1/users/:id')
+  .get(getUser)
+  .patch(updateUser)
+  .delete(deleteUser);
 
 const port = 3000;
 app.listen(port, () => {
