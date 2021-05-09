@@ -148,5 +148,19 @@
     "name": "test tour woot, again again!!",
     "duration": 10,
     "difficulty": "easy"
+  },
+  {
+    "id": 14,
+    "name": "test tour woot, again again!!",
+    "duration": 10,
+    "difficulty": "easy",
+    "price": 100
+  },
+  {
+    "id": 15,
+    "name": "test tour woot, again again!!",
+    "duration": 10,
+    "difficulty": "easy",
+    "price": 100
   }
 ]
