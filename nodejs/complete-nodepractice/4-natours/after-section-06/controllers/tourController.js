@@ -1,4 +1,5 @@
 /* eslint-disable node/no-unsupported-features/es-syntax */
+//const { query } = require('express');
 const Tour = require('./../models/tourModel');
 
 exports.createTour = async (req, res) => {
@@ -21,13 +22,54 @@ exports.createTour = async (req, res) => {
 
 exports.getAllTours = async (req, res) => {
   try {
-    const tours = await Tour.find(req.query);
+    //get a shallow copy
+    //1A) Filtering
+    const queryObj = { ...req.query };
+    const excludedFields = ['page', 'sort', 'limit', 'fields'];
 
-    // const tours = await Tour.find()
-    //   .where('duration')
-    //   .lt(10)
-    //   .where('difficulty')
-    //   .equals('easy');
+    excludedFields.forEach(el => delete queryObj[el]);
+
+    //1b)Advance filtering
+    let queryStr = JSON.stringify(queryObj);
+    queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
+
+    //console.log(req.query, queryObj); //Deletes page, sort, limit, and fields from url
+
+    let query = Tour.find(JSON.parse(queryStr));
+
+    //2)sorting
+    if (req.query.sort) {
+      const sortBy = req.query.sort.split(',').join(' ');
+
+      query = query.sort(req.query.sort);
+    } else {
+      query = query.sort('-_id');
+    }
+
+    //3)field limiting
+    if (req.query.fields) {
+      const fields = req.query.fields.split(',').join(' ');
+      query = query.select(fields);
+    } else {
+      query = query.select('-__v');
+    }
+
+    //4) pagination
+    const page = req.query.page * 1 || 1;
+    const limit = req.query.limit * 1 || 100;
+    const skip = (page - 1) * limit;
+
+    //ex. Limit: 10:: page:(1) 1-10, Page:(2) 11 -20 etc...
+    query = query.skip(skip).limit(limit);
+
+    if (req.query.page) {
+      const numTours = await Tour.countDocuments();
+      if (skip >= numTours) {
+        throw new Error('This page does not exisit');
+      }
+    }
+
+    const tours = await query;
 
     res.status(200).json({
       status: 'Success',
@@ -39,7 +81,7 @@ exports.getAllTours = async (req, res) => {
   } catch (err) {
     res.status(404).json({
       status: 'failed',
-      message: 'Oops nothing to bring back'
+      message: err
     });
   }
 };
