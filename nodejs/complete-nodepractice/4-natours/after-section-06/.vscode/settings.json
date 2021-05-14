@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/040bd933-570d-4111-a2ce-c35b87c8dd64/resourceGroups/KevinsPortfolio/providers/Microsoft.Web/sites/natourstest",
+    "appService.deploySubpath": "."
+}
