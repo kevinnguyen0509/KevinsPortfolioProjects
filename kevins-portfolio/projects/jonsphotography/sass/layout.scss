@@ -1,0 +1,34 @@
+.container-fluid {
+  padding: 0;
+}
+.row {
+  padding: 3% 15%;
+  width: 100%;
+  margin: 0;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 0 5px;
+  }
+}
+
+.img-fluid {
+  width: 100%;
+  height: 300px;
+
+  /*change height when going smaller*/
+}
+
+.img-containers {
+  padding: 2px 2px;
+}
+
+.btn {
+  border-radius: 0px;
+}
+// .overlay {
+//   background-color: rgba(0, 0, 0, 0.5);
+//   height: 100%;
+//   width: 100%;
+//   position: fixed;
+//   z-index: 10;
+// }

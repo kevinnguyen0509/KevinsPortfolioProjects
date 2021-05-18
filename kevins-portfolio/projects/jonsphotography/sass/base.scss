@@ -1,0 +1,33 @@
+:root {
+  --color-light-tan: #fefefe;
+  --color-medium-grey: #efefef;
+  --color-dark-tan: #e0d9d0;
+}
+
+$bp-largest: 75em; //1200px
+$bp-large: 68.75em; //1100px
+$bp-medium: 56.25em; //900px
+$bp-small: 38.43em; //614px
+body,
+html {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-light-tan),
+    var(--color-medium-grey)
+  );
+
+  color: #efefef;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.red {
+  color: red;
+  font-weight: 500;
+}

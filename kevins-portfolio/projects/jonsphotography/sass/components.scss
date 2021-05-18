@@ -1,0 +1,110 @@
+.jumbotron {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)),
+    url("https://cdn.naturettl.com/wp-content/uploads/2020/02/05200812/12-best-landscape-photography-locations-in-canada-800x533.jpg?p=18252");
+
+  background-size: cover;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+.navbar {
+  background-color: #fff;
+
+  padding-left: 40%;
+  box-shadow: 2px 0px 5px #8888;
+  padding-right: auto;
+}
+
+.navbar .container {
+  text-align: center;
+}
+
+.modal {
+  color: #000;
+}
+.about-me-img-container {
+  width: 100%;
+}
+.modal-header {
+  padding: 0;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+}
+
+.aboutme-name::after {
+  display: block;
+  width: 50%;
+  height: 2px;
+  content: "";
+
+  margin: 20px 30%;
+  background-color: orangered;
+}
+
+.aboutme-paragraph {
+  padding: 0 50px;
+}
+
+.modal-footer {
+  display: flex;
+
+  padding: 25px 50px;
+}
+.modal-content {
+  border-radius: 0;
+}
+
+.social-media {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  a {
+    width: 10%;
+  }
+}
+
+.contact-icons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  img {
+    width: 10%;
+  }
+}
+#imageModal {
+  padding-top: 5%;
+}
+.modal-image-container {
+  max-width: 1000px; /* New width for default modal */
+  height: 0;
+}
+.wildlife-img-modal {
+  height: auto;
+}
+/************nav********************/
+li {
+  cursor: pointer;
+}
+
+.navbar-brand {
+  width: 5%;
+  a img {
+    width: 100px;
+  }
+
+  .social-media-icons {
+    width: 100px;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    width: 35%;
+  }
+}
+
+.img-fluid {
+  cursor: pointer;
+}
